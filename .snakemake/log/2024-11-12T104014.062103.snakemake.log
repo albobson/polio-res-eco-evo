@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule fig3D in file C:\Users\meowy\OneDrive\Documents\PhD\dominant_drug_targets\pipeline\Snakefile, line 114:
+Missing input files for rule fig3D:
+    output: res/fig3/D.rds
+    affected files:
+        dat_gen/params/optim_params.csvdat_gen/params/fitness_function.csv

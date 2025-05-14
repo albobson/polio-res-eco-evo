@@ -1,0 +1,114 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+fig4D              1              1              1
+fig4E              1              1              1
+fig5A              1              1              1
+fig5B              1              1              1
+fig5CD             1              1              1
+gen_fig4           1              1              1
+gen_fig5           1              1              1
+total              9              1              1
+
+Select jobs to execute...
+
+[Wed Apr 30 13:48:18 2025]
+rule fig5CD:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    jobid: 22
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr 30 13:48:21 2025]
+Finished job 22.
+1 of 9 steps (11%) done
+Select jobs to execute...
+
+[Wed Apr 30 13:48:21 2025]
+rule fig5A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds
+    jobid: 20
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds; Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr 30 13:48:23 2025]
+Finished job 20.
+2 of 9 steps (22%) done
+Select jobs to execute...
+
+[Wed Apr 30 13:48:23 2025]
+rule fig4D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/traj_for_phase_plane.csv
+    jobid: 13
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr 30 13:48:35 2025]
+Finished job 13.
+3 of 9 steps (33%) done
+Select jobs to execute...
+
+[Wed Apr 30 13:48:35 2025]
+rule fig4E:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/traj_for_phase_plane.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds
+    jobid: 14
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/traj_for_phase_plane.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:45:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=45, n_cores=10
+
+[Wed Apr 30 13:49:02 2025]
+Finished job 14.
+4 of 9 steps (44%) done
+Select jobs to execute...
+
+[Wed Apr 30 13:49:02 2025]
+rule gen_fig4:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/GH.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    jobid: 11
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr 30 13:49:04 2025]
+Finished job 11.
+5 of 9 steps (56%) done
+Select jobs to execute...
+
+[Wed Apr 30 13:49:04 2025]
+rule fig5B:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds
+    jobid: 21
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds; Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr 30 13:49:20 2025]
+Finished job 21.
+6 of 9 steps (67%) done
+Select jobs to execute...
+
+[Wed Apr 30 13:49:20 2025]
+rule gen_fig5:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+    jobid: 19
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr 30 13:49:21 2025]
+Error in rule gen_fig5:
+    jobid: 19
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-04-30T134817.971015.snakemake.log

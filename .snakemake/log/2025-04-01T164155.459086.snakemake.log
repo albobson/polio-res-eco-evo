@@ -1,0 +1,159 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+fig2A              1              1              1
+fig2B              1              1              1
+fig3B              1              1              1
+fig3C              1              1              1
+fig3D              1              1              1
+fig4A              1              1              1
+fig4D              1              1              1
+fig4E              1              1              1
+fig4F              1              1              1
+fig4G              1              1              1
+fig4H              1              1              1
+fig5A              1              1              1
+fig5B              1              1              1
+fig5C              1              1              1
+fig5D              1              1              1
+fig5EF             1              1              1
+fig6A              1              1              1
+fig6B              1              1              1
+fig6C              1              1              1
+fig6D              1              1              1
+fig6EF             1              1              1
+gen_fig2           1              1              1
+gen_fig3           1              1              1
+gen_fig4           1              1              1
+gen_fig5           1              1              1
+gen_fig6           1              1              1
+total             28              1              1
+
+Select jobs to execute...
+
+[Tue Apr  1 16:41:55 2025]
+rule fig6EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    jobid: 32
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:07 2025]
+Finished job 32.
+1 of 28 steps (4%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:07 2025]
+rule fig5EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    jobid: 25
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:13 2025]
+Finished job 25.
+2 of 28 steps (7%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:13 2025]
+rule fig4H:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/H.rds
+    jobid: 19
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:15 2025]
+Finished job 19.
+3 of 28 steps (11%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:15 2025]
+rule fig4F:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds
+    jobid: 15
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:17 2025]
+Finished job 15.
+4 of 28 steps (14%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:17 2025]
+rule fig4G:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/G.rds
+    jobid: 18
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:19 2025]
+Finished job 18.
+5 of 28 steps (18%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:19 2025]
+rule fig2B:
+    input: dat/collett_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    jobid: 4
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:22 2025]
+Finished job 4.
+6 of 28 steps (21%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:22 2025]
+rule fig3B:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/tan_fit_df.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds
+    jobid: 6
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:23 2025]
+Finished job 6.
+7 of 28 steps (25%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:23 2025]
+rule fig6C:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds
+    jobid: 30
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr  1 16:42:38 2025]
+Finished job 30.
+8 of 28 steps (29%) done
+Select jobs to execute...
+
+[Tue Apr  1 16:42:38 2025]
+rule fig5B:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds
+    jobid: 22
+    reason: Code has changed since last execution; Params have changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=10
+
+[Tue Apr  1 16:43:08 2025]
+Error in rule fig5B:
+    jobid: 22
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-04-01T164155.459086.snakemake.log

@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+dominance_trials        1              1              1
+total                   1              1              1
+
+Select jobs to execute...
+
+[Tue Apr  1 10:21:55 2025]
+rule dominance_trials:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    jobid: 0
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=3:00:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=4320, n_cores=20
+
+[Tue Apr  1 10:21:55 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake\log\2025-04-01T102155.261083.snakemake.log

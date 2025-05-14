@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/snakefile, line 78:
+Missing input files for rule all:
+    affected files:
+        res/fig6/E.rds

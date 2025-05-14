@@ -1,0 +1,71 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all                    1              1              1
+collate_all            1              1              1
+collate_all_sup        1              1              1
+fig4A                  1              1              1
+fig4D                  1              1              1
+fig4E                  1              1              1
+fig5A                  1              1              1
+fig5B                  1              1              1
+gen_fig4               1              1              1
+gen_fig5               1              1              1
+gen_sfig5              1              1              1
+gen_sfig6              1              1              1
+sfig2                  1              1              1
+sfig3                  1              1              1
+sfig4                  1              1              1
+sfig5A                 1              1              1
+sfig6A                 1              1              1
+sfig6BC                1              1              1
+total                 18              1              1
+
+Select jobs to execute...
+
+[Fri May  9 13:25:20 2025]
+rule sfig6BC:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/C.rds
+    jobid: 38
+    reason: Updated input files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 13:25:28 2025]
+Finished job 38.
+1 of 18 steps (6%) done
+Select jobs to execute...
+
+[Fri May  9 13:25:28 2025]
+rule fig5A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds
+    jobid: 20
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 13:25:31 2025]
+Finished job 20.
+2 of 18 steps (11%) done
+Select jobs to execute...
+
+[Fri May  9 13:25:31 2025]
+rule sfig6A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+    jobid: 37
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 13:26:28 2025]
+Error in rule sfig6A:
+    jobid: 37
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-05-09T132520.120506.snakemake.log

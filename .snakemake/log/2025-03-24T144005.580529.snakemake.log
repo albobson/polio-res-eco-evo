@@ -1,0 +1,78 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+altdrugtrials                  1              1              1
+collate_plots                  1              1              1
+fig2A                          1              1              1
+fig2B                          1              1              1
+fig3B                          1              1              1
+fig3C                          1              1              1
+fig3D                          1              1              1
+fig4A                          1              1              1
+fig4B                          1              1              1
+fig4E                          1              1              1
+fig5B                          1              1              1
+fig5C                          1              1              1
+fig6A                          1              1              1
+fig6B                          1              1              1
+fig6CDE                        1              1              1
+fit_func                       1              1              1
+opt_model                      1              1              1
+optim_clin_trial_params        1              1              1
+sim_clin_trial                 1              1              1
+total                         20              1              1
+
+Select jobs to execute...
+
+[Mon Mar 24 14:40:14 2025]
+rule fit_func:
+    input: dat/tanner_pure_culture.csv, dat/tanner_mix_culture.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/tan_fit_df.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fit_summary.csv
+    jobid: 5
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/tan_fit_df.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    resources: mem_mb=3G, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=2G, runtime=60, n_cores=1
+
+Submitted job 5 with external jobid 'modified hard resource list of job 0'.
+[Mon Mar 24 14:40:37 2025]
+Finished job 5.
+1 of 20 steps (5%) done
+Select jobs to execute...
+
+[Mon Mar 24 14:40:37 2025]
+rule opt_model:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv
+    jobid: 8
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv; Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:02:00:00, disk_free=4G, runtime=120, n_cores=7
+
+Submitted job 8 with external jobid 'modified hard resource list of job 0'.
+[Mon Mar 24 14:42:34 2025]
+Finished job 8.
+2 of 20 steps (10%) done
+Select jobs to execute...
+
+[Mon Mar 24 14:42:34 2025]
+rule fig6A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds
+    jobid: 16
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 16 with external jobid 'modified hard resource list of job 0'.
+[Mon Mar 24 14:42:54 2025]
+Error in rule fig6A:
+    jobid: 16
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule fig6A on cluster (jobid: 16, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.xscpwtq6/snakejob.fig6A.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-24T144005.580529.snakemake.log

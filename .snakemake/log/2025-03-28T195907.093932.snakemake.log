@@ -1,0 +1,107 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+gen_fig2           1              1              1
+gen_fig3           1              1              1
+gen_fig4           1              1              1
+gen_fig5           1              1              1
+gen_fig6           1              1              1
+total              7              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 19:59:12 2025]
+rule gen_fig2:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf
+    jobid: 2
+    reason: Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 2 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:59:32 2025]
+Finished job 2.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:59:32 2025]
+rule gen_fig3:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/D.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf
+    jobid: 5
+    reason: Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 5 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:59:42 2025]
+Finished job 5.
+2 of 7 steps (29%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:59:42 2025]
+rule gen_fig6:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    jobid: 27
+    reason: Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 27 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 20:00:02 2025]
+Finished job 27.
+3 of 7 steps (43%) done
+Select jobs to execute...
+
+[Fri Mar 28 20:00:02 2025]
+rule gen_fig5:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+    jobid: 20
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 20 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 20:00:22 2025]
+Finished job 20.
+4 of 7 steps (57%) done
+Select jobs to execute...
+
+[Fri Mar 28 20:00:22 2025]
+rule gen_fig4:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/G.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/H.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    jobid: 11
+    reason: Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 11 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 20:00:42 2025]
+Finished job 11.
+5 of 7 steps (71%) done
+Select jobs to execute...
+
+[Fri Mar 28 20:00:42 2025]
+rule collate_all:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    jobid: 1
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 1 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 20:00:52 2025]
+Error in rule collate_all:
+    jobid: 1
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule collate_all on cluster (jobid: 1, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.ddqv9y3v/snakejob.collate_all.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-28T195907.093932.snakemake.log

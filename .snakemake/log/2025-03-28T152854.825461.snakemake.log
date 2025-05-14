@@ -1,0 +1,148 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+collate_all                    1              1              1
+dominance_trials               1              1              1
+fig2A                          1              1              1
+fig2B                          1              1              1
+fig3B                          1              1              1
+fig3C                          1              1              1
+fig3D                          1              1              1
+fig4A                          1              1              1
+fig4D                          1              1              1
+fig4E                          1              1              1
+fig4F                          1              1              1
+fig4G                          1              1              1
+fig4H                          1              1              1
+fig5A                          1              1              1
+fig5B                          1              1              1
+fig5C                          1              1              1
+fig5D                          1              1              1
+fig5EF                         1              1              1
+fig6A                          1              1              1
+fig6B                          1              1              1
+fig6C                          1              1              1
+fig6D                          1              1              1
+fig6EF                         1              1              1
+fit_func                       1              1              1
+gen_fig2                       1              1              1
+gen_fig3                       1              1              1
+gen_fig4                       1              1              1
+gen_fig5                       1              1              1
+gen_fig6                       1              1              1
+opt_model                      1              1              1
+optim_clin_trial_params        1              1              1
+sim_clin_trial                 1              1              1
+stringency_trials              1              1              1
+total                         34              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 15:29:00 2025]
+rule fig2B:
+    input: dat/collett_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    jobid: 4
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 4 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:29:09 2025]
+Finished job 4.
+1 of 34 steps (3%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:29:09 2025]
+rule fig2A:
+    input: dat/tanner_pure_culture.csv, dat/tanner_mix_culture.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds
+    jobid: 3
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds; Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 3 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:29:29 2025]
+Finished job 3.
+2 of 34 steps (6%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:29:29 2025]
+rule gen_fig2:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf
+    jobid: 2
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 2 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:29:49 2025]
+Finished job 2.
+3 of 34 steps (9%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:29:50 2025]
+rule fig3C:
+    input: dat/tanner_pure_culture.csv, dat/tanner_mix_culture.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/C.rds
+    jobid: 8
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/C.rds; Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 8 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:30:09 2025]
+Finished job 8.
+4 of 34 steps (12%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:30:09 2025]
+rule fit_func:
+    input: dat/tanner_pure_culture.csv, dat/tanner_mix_culture.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/tan_fit_df.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fit_summary.csv
+    jobid: 7
+    reason: Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=2G, runtime=60, n_cores=1
+
+Submitted job 7 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:30:29 2025]
+Finished job 7.
+5 of 34 steps (15%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:30:29 2025]
+rule fig3B:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/tan_fit_df.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds
+    jobid: 6
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/tan_fit_df.csv
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 6 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:30:49 2025]
+Finished job 6.
+6 of 34 steps (18%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:30:49 2025]
+rule opt_model:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv
+    jobid: 10
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    resources: mem_mb=3G, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:02:00:00, disk_free=4G, runtime=120, n_cores=7
+
+Submitted job 10 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:30:59 2025]
+Error in rule opt_model:
+    jobid: 10
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule opt_model on cluster (jobid: 10, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.2jgpzjv4/snakejob.opt_model.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-28T152854.825461.snakemake.log

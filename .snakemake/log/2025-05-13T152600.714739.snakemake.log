@@ -1,0 +1,3 @@
+Building DAG of jobs...
+MissingRuleException:
+No rule to produce runs/ddt_logistic_mu_2e-5_2025-05-09/dat_gen/params/logistic_fit_summary.csv (if you use input functions make sure that they don't raise unexpected exceptions).

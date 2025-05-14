@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+fig5A                          1              1              1
+optim_clin_trial_params        1              1              1
+sim_clin_trial                 1              1              1
+total                          4              1              1
+
+Select jobs to execute...
+
+[Tue Nov 12 11:20:19 2024]
+rule optim_clin_trial_params:
+    input: dat_gen/params/optim_params.csv, dat_gen/params/fitness_function.csv, dat/collett_trial.csv
+    output: dat_gen/params/optim_clin_trial_params.rds, dat_gen/params/optim_clin_trial_params.csv
+    jobid: 5
+    reason: Updated input files: dat_gen/params/optim_params.csv, dat_gen/params/fitness_function.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./dat_gen/params, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10
+
+[Tue Nov 12 11:20:30 2024]
+Error in rule optim_clin_trial_params:
+    jobid: 5
+    input: dat_gen/params/optim_params.csv, dat_gen/params/fitness_function.csv, dat/collett_trial.csv
+    output: dat_gen/params/optim_clin_trial_params.rds, dat_gen/params/optim_clin_trial_params.csv
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2024-11-12T112019.150309.snakemake.log

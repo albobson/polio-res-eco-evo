@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+collate_plots        1              1              1
+fig5C                1              1              1
+total                3              1              1
+
+Select jobs to execute...
+
+[Tue Mar 25 12:30:32 2025]
+rule fig5C:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    jobid: 15
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 15 with external jobid 'modified hard resource list of job 0'.
+[Tue Mar 25 12:30:42 2025]
+Error in rule fig5C:
+    jobid: 15
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule fig5C on cluster (jobid: 15, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.foxes5to/snakejob.fig5C.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-25T123026.469973.snakemake.log

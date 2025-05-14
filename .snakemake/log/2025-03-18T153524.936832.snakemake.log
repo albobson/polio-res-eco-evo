@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+altdrugtrials                  1              1              1
+fig3B                          1              1              1
+fig6CDE                        1              1              1
+opt_model                      1              1              1
+optim_clin_trial_params        1              1              1
+total                          6              1              1
+
+Select jobs to execute...
+
+[Tue Mar 18 15:35:43 2025]
+rule fig3B:
+    input: dat/tanner_pure_culture.csv, dat/tanner_mix_culture.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-18/fig3/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/fitness_function.csv
+    jobid: 3
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/fitness_function.csv
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 3 with external jobid 'modified hard resource list of job 0'.
+[Tue Mar 18 15:36:03 2025]
+Error in rule fig3B:
+    jobid: 3
+    input: dat/tanner_pure_culture.csv, dat/tanner_mix_culture.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-18/fig3/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/fitness_function.csv
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule fig3B on cluster (jobid: 3, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.q3jth5p3/snakejob.fig3B.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-18T153524.936832.snakemake.log

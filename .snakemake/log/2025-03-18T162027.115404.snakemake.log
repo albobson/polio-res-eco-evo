@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+altdrugtrials                  1              1              1
+fig6CDE                        1              1              1
+opt_model                      1              1              1
+optim_clin_trial_params        1              1              1
+total                          5              1              1
+
+Select jobs to execute...
+
+[Tue Mar 18 16:20:33 2025]
+rule opt_model:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_params.csv
+    jobid: 2
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_params.csv
+    resources: mem_mb=3G, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:02:00:00, disk_free=4G, runtime=120, n_cores=7
+
+Submitted job 2 with external jobid 'modified hard resource list of job 0'.
+[Tue Mar 18 16:22:54 2025]
+Finished job 2.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Tue Mar 18 16:22:54 2025]
+rule optim_clin_trial_params:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_clin_trial_params.rds, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_clin_trial_params.csv
+    jobid: 5
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_clin_trial_params.csv; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_params.csv
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=4:00:00:00, disk_free=4G, runtime=5760, n_cores=20-25
+
+Submitted job 5 with external jobid 'modified hard resource list of job 0'.
+[Tue Mar 18 16:23:13 2025]
+Error in rule optim_clin_trial_params:
+    jobid: 5
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_clin_trial_params.rds, runs/ddt_logistic_mu_2e-05_2025-03-18/dat_gen/params/optim_clin_trial_params.csv
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule optim_clin_trial_params on cluster (jobid: 5, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.0i50ma_a/snakejob.optim_clin_trial_params.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-18T162027.115404.snakemake.log

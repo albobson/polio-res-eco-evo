@@ -1,0 +1,101 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all                    1              1              1
+collate_all            1              1              1
+collate_all_sup        1              1              1
+fig4A                  1              1              1
+fig4D                  1              1              1
+fig4E                  1              1              1
+fig4F                  1              1              1
+fig4GH                 1              1              1
+fig5A                  1              1              1
+fig5B                  1              1              1
+fig5CD                 1              1              1
+gen_fig4               1              1              1
+gen_fig5               1              1              1
+gen_sfig5              1              1              1
+gen_sfig6              1              1              1
+sfig2                  1              1              1
+sfig3                  1              1              1
+sfig4                  1              1              1
+sfig5A                 1              1              1
+sfig5EF                1              1              1
+sfig6A                 1              1              1
+sfig6BC                1              1              1
+total                 22              1              1
+
+Select jobs to execute...
+
+[Fri May  9 10:23:38 2025]
+rule fig5CD:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    jobid: 22
+    reason: Updated input files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_stringency_trials.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 10:23:44 2025]
+Finished job 22.
+1 of 22 steps (5%) done
+Select jobs to execute...
+
+[Fri May  9 10:23:44 2025]
+rule sfig5EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/F.rds
+    jobid: 34
+    reason: Updated input files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 10:23:48 2025]
+Finished job 34.
+2 of 22 steps (9%) done
+Select jobs to execute...
+
+[Fri May  9 10:23:48 2025]
+rule fig4F:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds
+    jobid: 15
+    reason: Updated input files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 10:23:50 2025]
+Finished job 15.
+3 of 22 steps (14%) done
+Select jobs to execute...
+
+[Fri May  9 10:23:50 2025]
+rule fig4GH:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/GH.rds
+    jobid: 18
+    reason: Updated input files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 10:23:53 2025]
+Finished job 18.
+4 of 22 steps (18%) done
+Select jobs to execute...
+
+[Fri May  9 10:23:53 2025]
+rule sfig6BC:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/C.rds
+    jobid: 38
+    reason: Updated input files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri May  9 10:23:55 2025]
+Error in rule sfig6BC:
+    jobid: 38
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/C.rds
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-05-09T102338.102723.snakemake.log

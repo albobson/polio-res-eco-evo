@@ -1,0 +1,47 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+collate_plots        1              1              1
+fig5C                1              1              1
+total                3              1              1
+
+Select jobs to execute...
+
+[Tue Mar 25 12:32:17 2025]
+rule fig5C:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    jobid: 15
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 15 with external jobid 'modified hard resource list of job 0'.
+[Tue Mar 25 12:32:37 2025]
+Finished job 15.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Tue Mar 25 12:32:37 2025]
+rule collate_plots:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_res.pdf
+    jobid: 1
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_res.pdf; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:02:00:00, disk_free=4G, runtime=120, n_cores=1
+
+Submitted job 1 with external jobid 'modified hard resource list of job 0'.
+[Tue Mar 25 12:32:57 2025]
+Error in rule collate_plots:
+    jobid: 1
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_res.pdf
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule collate_plots on cluster (jobid: 1, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.xywg31dv/snakejob.collate_plots.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-25T123214.090443.snakemake.log

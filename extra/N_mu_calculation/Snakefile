@@ -1,0 +1,80 @@
+## 230830
+
+#### Intro ####
+## I created a new, faster version of the stochastic model. I am going to assess the extinction probabilities, given the initial effective population size and the mutation rate.
+
+#### Set-Up for Simulations ####
+## Define the N*u values to generate simulations
+
+import numpy as np
+
+start = 0.01
+stop = 1000
+num_points = 100  # Number of points you want in the range
+
+## Number of values to run
+n_u_init = np.logspace(np.log10(start), np.log10(stop), num=num_points)
+
+n_u = ["{:.8f}".format(num) for num in n_u_init] ## Proper formatting
+
+## How many generations to run each simulation?
+gens = 8
+
+## Now set the number of runs to do per initial simulation condition:
+n_runs = 100
+run_num = range(1, (n_runs+1), 1) 
+
+
+#### Set-Up for Snakemake ####
+## Create the file pattern that I want to end up with (for each rule?)
+
+## For simulations
+out_sim_pattern = "sim_data/n-u-{nu}_it-{run}.csv"
+## Generate the list of specific files needed
+out_sim_files = expand(out_sim_pattern,
+                       nu = n_u,
+                       run = run_num)
+
+## For collation
+out_tog_pattern = "sim_data/all_stoch-v2_var.csv"
+## Generate the list of specific files needed
+out_tog_files = "sim_data/all_stoch-v2_var.csv"
+
+## For the results
+# out_results_pattern = "results/result_stoch-v2_n-u.png"
+# ## Generate the list of specific files needed
+# out_results_files = "results/result_stoch-v2_n-u.png"
+
+#### Define Rules for Snakemake ####
+## Rule All: Tells Snakemake what we want in the end of the run.
+rule all:
+    input:
+        ## These are the files that I want in the end.
+        "sim_data/all_stoch-v2_var.csv"
+
+## Rule run_sims: Runs simulations.
+rule run_var_sims:
+    params:
+        generations = gens
+    output:
+        out_file = out_sim_pattern
+    script:
+        'scr/stoch_var_moi_4_snakemake.R'
+
+## Rule collate_sims: Collates simulation data.
+rule collate_sims:
+    input:
+        out_sim_files
+    output:
+        out_tog_pattern
+    script:
+        'scr/collate_all_sim_data.R'
+
+## Rule generate_results: Creates plots of simulation data.
+#rule generate_results:
+#    input:
+#        out_tog_files
+#    output:
+#        out_results_pattern
+#    script:
+#        'scr/generate_stoch_results.R'

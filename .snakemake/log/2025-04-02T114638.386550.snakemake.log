@@ -1,0 +1,50 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+gen_fig4           1              1              1
+total              3              1              1
+
+Select jobs to execute...
+
+[Wed Apr  2 11:46:38 2025]
+rule gen_fig4:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/G.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/H.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    jobid: 11
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr  2 11:46:46 2025]
+Finished job 11.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Wed Apr  2 11:46:46 2025]
+rule collate_all:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    jobid: 1
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Wed Apr  2 11:46:47 2025]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Wed Apr  2 11:46:47 2025]
+localrule all:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    jobid: 0
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp
+
+[Wed Apr  2 11:46:47 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake\log\2025-04-02T114638.386550.snakemake.log

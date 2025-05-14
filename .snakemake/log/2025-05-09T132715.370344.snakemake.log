@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all                    1              1              1
+collate_all            1              1              1
+collate_all_sup        1              1              1
+fig4A                  1              1              1
+fig4D                  1              1              1
+fig4E                  1              1              1
+fig5B                  1              1              1
+gen_fig4               1              1              1
+gen_fig5               1              1              1
+gen_sfig5              1              1              1
+gen_sfig6              1              1              1
+sfig2                  1              1              1
+sfig3                  1              1              1
+sfig4                  1              1              1
+sfig5A                 1              1              1
+sfig6A                 1              1              1
+total                 16              1              1
+
+Select jobs to execute...
+
+[Fri May  9 13:27:15 2025]
+rule sfig6A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+    jobid: 37
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sfig6A in file C:\Users\meowy\OneDrive\Documents\PhD\dominant_drug_targets\pipeline\Snakefile, line 1115:
+Job 37  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-05-09T132715.370344.snakemake.log

@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+fig5A              1              1              1
+fig5C              1              1              1
+fig5D              1              1              1
+fig6D              1              1              1
+gen_fig4           1              1              1
+gen_fig5           1              1              1
+gen_fig6           1              1              1
+total              9              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 19:52:05 2025]
+rule fig6D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds
+    jobid: 31
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 31 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:52:25 2025]
+Finished job 31.
+1 of 9 steps (11%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:52:25 2025]
+rule gen_fig6:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    jobid: 27
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 27 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:52:45 2025]
+Error in rule gen_fig6:
+    jobid: 27
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule gen_fig6 on cluster (jobid: 27, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.w5myjl3t/snakejob.gen_fig6.27.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-28T195158.997470.snakemake.log

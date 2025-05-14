@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all                          1              1              1
+all_stringency_trials        1              1              1
+collate_all_sup              1              1              1
+gen_sfig5                    1              1              1
+gen_sfig6                    1              1              1
+sfig1                        1              1              1
+sfig2                        1              1              1
+sfig3                        1              1              1
+sfig4                        1              1              1
+sfig5A                       1              1              1
+sfig5B                       1              1              1
+sfig5C                       1              1              1
+sfig5D                       1              1              1
+sfig5EF                      1              1              1
+sfig6A                       1              1              1
+sfig6BC                      1              1              1
+total                       16              1              1
+
+Select jobs to execute...
+
+[Fri Apr 11 17:11:27 2025]
+rule sfig5EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/F.rds
+    jobid: 37
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/E.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Fri Apr 11 17:11:33 2025]
+Error in rule sfig5EF:
+    jobid: 37
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/F.rds
+
+Removing output files of failed job sfig5EF since they might be corrupted:
+runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/E.rds
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-04-11T171127.570425.snakemake.log

@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all_stringency_trials        1              1              1
+total                        1              1              1
+
+Select jobs to execute...
+
+[Fri Apr 11 17:11:14 2025]
+rule all_stringency_trials:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    jobid: 0
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=3:00:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=4320, n_cores=20
+
+[Fri Apr 11 17:11:14 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake\log\2025-04-11T171114.335317.snakemake.log

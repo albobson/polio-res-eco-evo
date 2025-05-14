@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all                          1              1              1
+all_stringency_trials        1              1              1
+collate_all                  1              1              1
+collate_all_sup              1              1              1
+fig5B                        1              1              1
+gen_fig5                     1              1              1
+gen_sfig6                    1              1              1
+sfig6A                       1              1              1
+sfig6BC                      1              1              1
+total                        9              1              1
+
+Select jobs to execute...
+
+[Thu May  1 15:06:33 2025]
+rule all_stringency_trials:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+    jobid: 39
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=3:00:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=4320, n_cores=7
+
+[Thu May  1 15:07:21 2025]
+Error in rule all_stringency_trials:
+    jobid: 39
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/all_full_stringency_trials.csv
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2025-05-01T150632.800219.snakemake.log

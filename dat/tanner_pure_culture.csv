@@ -1,0 +1,13 @@
+sample,pocap,pfu,panel,mutation,strain,pfu_save
+res,no,554912390.8,j,VP1-I94F,Hispaniola,554912390.8
+res,yes,554912390.8,j,VP1-I94F,Hispaniola,554912390.8
+sus,yes,3941.936018,j,VP1-I94F,Hispaniola,3941.936018
+sus,no,338612487.6,j,VP1-I94F,Hispaniola,338612487.6
+res,no,1000000000,i,VP3-A24V,Hispaniola,1000000000
+res,yes,912010839.4,i,VP3-A24V,Hispaniola,912010839.4
+sus,no,2398832919,i,VP3-A24V,Hispaniola,2398832919
+sus,yes,28840.31503,i,VP3-A24V,Hispaniola,28840.31503
+res,no,239293453.6,f,VP3-A24V,Mahoney,239293453.6
+res,yes,936910515.3,f,VP3-A24V,Mahoney,936910515.3
+sus,no,1242623672,f,VP3-A24V,Mahoney,1242623672
+sus,yes,578866.7658,f,VP3-A24V,Mahoney,578866.7658

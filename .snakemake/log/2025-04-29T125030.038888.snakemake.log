@@ -1,0 +1,118 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all                    1              1              1
+collate_all_sup        1              1              1
+gen_sfig5              1              1              1
+gen_sfig6              1              1              1
+sfig3                  1              1              1
+sfig4                  1              1              1
+sfig5A                 1              1              1
+sfig6A                 1              1              1
+total                  8              1              1
+
+Select jobs to execute...
+
+[Tue Apr 29 12:50:30 2025]
+rule sfig5A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/A.rds
+    jobid: 33
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:50:33 2025]
+Finished job 33.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:50:33 2025]
+rule gen_sfig5:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/sfig5.pdf
+    jobid: 32
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:50:40 2025]
+Finished job 32.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:50:40 2025]
+rule sfig6A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+    jobid: 40
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:50:54 2025]
+Finished job 40.
+3 of 8 steps (38%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:50:55 2025]
+rule gen_sfig6:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/C.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/sfig6.pdf
+    jobid: 39
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:51:02 2025]
+Finished job 39.
+4 of 8 steps (50%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:51:02 2025]
+rule sfig3:
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig3/sfig3.pdf
+    jobid: 30
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:51:35 2025]
+Finished job 30.
+5 of 8 steps (62%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:51:35 2025]
+rule sfig4:
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig4/sfig4.pdf
+    jobid: 31
+    reason: Code has changed since last execution
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:51:43 2025]
+Finished job 31.
+6 of 8 steps (75%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:51:43 2025]
+rule collate_all_sup:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig1/sfig1.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig2/sfig2.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig3/sfig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig4/sfig4.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/sfig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/sfig6.pdf
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_sfigs.pdf
+    jobid: 27
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig3/sfig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig5/sfig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig6/sfig6.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/sup/sfig4/sfig4.pdf
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10, n_cores=1
+
+[Tue Apr 29 12:51:45 2025]
+Finished job 27.
+7 of 8 steps (88%) done
+Select jobs to execute...
+
+[Tue Apr 29 12:51:45 2025]
+localrule all:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_sfigs.pdf
+    jobid: 0
+    reason: Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_sfigs.pdf
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp
+
+[Tue Apr 29 12:51:45 2025]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: .snakemake\log\2025-04-29T125030.038888.snakemake.log

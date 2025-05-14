@@ -1,0 +1,64 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+collate_all                    1              1              1
+dominance_trials               1              1              1
+fig2A                          1              1              1
+fig2B                          1              1              1
+fig3B                          1              1              1
+fig3C                          1              1              1
+fig3D                          1              1              1
+fig4A                          1              1              1
+fig4D                          1              1              1
+fig4E                          1              1              1
+fig4F                          1              1              1
+fig4G                          1              1              1
+fig4H                          1              1              1
+fig5A                          1              1              1
+fig5B                          1              1              1
+fig5C                          1              1              1
+fig5D                          1              1              1
+fig5EF                         1              1              1
+fig6A                          1              1              1
+fig6B                          1              1              1
+fig6C                          1              1              1
+fig6D                          1              1              1
+fig6EF                         1              1              1
+fit_func                       1              1              1
+gen_fig2                       1              1              1
+gen_fig3                       1              1              1
+gen_fig4                       1              1              1
+gen_fig5                       1              1              1
+gen_fig6                       1              1              1
+opt_model                      1              1              1
+optim_clin_trial_params        1              1              1
+sim_clin_trial                 1              1              1
+stringency_trials              1              1              1
+total                         34              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 15:19:30 2025]
+rule fig2B:
+    input: dat/collett_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    jobid: 4
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds; Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 4 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 15:20:00 2025]
+Error in rule fig2B:
+    jobid: 4
+    input: dat/collett_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/B.rds
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule fig2B on cluster (jobid: 4, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.dvfb8lqn/snakejob.fig2B.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-28T151914.934968.snakemake.log

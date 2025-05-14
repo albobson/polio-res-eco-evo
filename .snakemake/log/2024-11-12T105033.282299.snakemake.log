@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+all          1              1              1
+fig4A        1              1              1
+total        2              1              1
+
+Select jobs to execute...
+
+[Tue Nov 12 10:50:33 2024]
+rule fig4A:
+    input: dat_gen/params/optim_params.csv, dat_gen/params/fitness_function.csv
+    output: res/fig4/A.rds
+    jobid: 1
+    reason: Missing output files: res/fig4/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./res/fig4/A, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10
+
+[Tue Nov 12 10:50:39 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Tue Nov 12 10:50:39 2024]
+localrule all:
+    input: res/fig4/A.rds
+    jobid: 0
+    reason: Input files updated by another job: res/fig4/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp
+
+[Tue Nov 12 10:50:39 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake\log\2024-11-12T105033.282299.snakemake.log

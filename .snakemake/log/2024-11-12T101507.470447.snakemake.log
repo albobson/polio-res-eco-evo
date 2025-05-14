@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+all          1              1              1
+fig2A        1              1              1
+total        2              1              1
+
+Select jobs to execute...
+
+[Tue Nov 12 10:15:07 2024]
+rule fig2A:
+    output: res/fig2/A.rds
+    jobid: 1
+    reason: Missing output files: res/fig2/A.rds
+    resources: tmpdir=C:\Users\meowy\AppData\Local\Temp, log_loc=./res/fig2/A, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10
+
+[Tue Nov 12 10:15:09 2024]
+Error in rule fig2A:
+    jobid: 1
+    output: res/fig2/A.rds
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake\log\2024-11-12T101507.470447.snakemake.log

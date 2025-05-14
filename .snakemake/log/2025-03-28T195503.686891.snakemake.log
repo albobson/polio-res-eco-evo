@@ -1,0 +1,108 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+fig5A              1              1              1
+fig5C              1              1              1
+fig5D              1              1              1
+gen_fig4           1              1              1
+gen_fig5           1              1              1
+gen_fig6           1              1              1
+total              8              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 19:55:09 2025]
+rule gen_fig6:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    jobid: 27
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 27 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:55:29 2025]
+Finished job 27.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:55:29 2025]
+rule fig5D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    jobid: 24
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 24 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:55:49 2025]
+Finished job 24.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:55:49 2025]
+rule gen_fig4:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/G.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/H.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    jobid: 11
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 11 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:56:09 2025]
+Finished job 11.
+3 of 8 steps (38%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:56:09 2025]
+rule fig5A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds
+    jobid: 21
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 21 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:56:29 2025]
+Finished job 21.
+4 of 8 steps (50%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:56:29 2025]
+rule fig5C:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    jobid: 23
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds; Set of input files has changed since last execution; Code has changed since last execution
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 23 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:56:59 2025]
+Finished job 23.
+5 of 8 steps (62%) done
+Select jobs to execute...
+
+[Fri Mar 28 19:56:59 2025]
+rule gen_fig5:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+    jobid: 20
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf; Input files updated by another job: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 20 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:57:19 2025]
+Error in rule gen_fig5:
+    jobid: 20
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule gen_fig5 on cluster (jobid: 20, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.grk8gxvx/snakejob.gen_fig5.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-28T195503.686891.snakemake.log

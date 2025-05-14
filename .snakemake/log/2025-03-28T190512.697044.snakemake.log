@@ -1,0 +1,48 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 1
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+collate_all        1              1              1
+fig4A              1              1              1
+fig4D              1              1              1
+fig4E              1              1              1
+fig4G              1              1              1
+fig4H              1              1              1
+fig5A              1              1              1
+fig5C              1              1              1
+fig5D              1              1              1
+fig5EF             1              1              1
+fig6A              1              1              1
+fig6B              1              1              1
+fig6D              1              1              1
+gen_fig3           1              1              1
+gen_fig4           1              1              1
+gen_fig5           1              1              1
+gen_fig6           1              1              1
+total             18              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 19:05:19 2025]
+rule fig5EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    jobid: 25
+    reason: Missing output files: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds
+    resources: mem_mb=3G, disk_mb=4G, tmpdir=<TBD>, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, disk_free=4G, runtime=10, n_cores=1
+
+Submitted job 25 with external jobid 'modified hard resource list of job 0'.
+[Fri Mar 28 19:05:39 2025]
+Error in rule fig5EF:
+    jobid: 25
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    cluster_jobid: modified hard resource list of job 0
+
+Error executing rule fig5EF on cluster (jobid: 25, external: modified hard resource list of job 0, jobscript: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/tmp.ey5fs3x0/snakejob.fig5EF.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-28T190512.697044.snakemake.log

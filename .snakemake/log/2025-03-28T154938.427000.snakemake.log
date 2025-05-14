@@ -1,0 +1,360 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+collate_all                    1              1              1
+dominance_trials               1              1              1
+fig3D                          1              1              1
+fig4A                          1              1              1
+fig4D                          1              1              1
+fig4E                          1              1              1
+fig4F                          1              1              1
+fig4G                          1              1              1
+fig4H                          1              1              1
+fig5A                          1              1              1
+fig5B                          1              1              1
+fig5C                          1              1              1
+fig5D                          1              1              1
+fig5EF                         1              1              1
+fig6A                          1              1              1
+fig6B                          1              1              1
+fig6C                          1              1              1
+fig6D                          1              1              1
+fig6EF                         1              1              1
+gen_fig3                       1              1              1
+gen_fig4                       1              1              1
+gen_fig5                       1              1              1
+gen_fig6                       1              1              1
+optim_clin_trial_params        1              1              1
+sim_clin_trial                 1              1              1
+stringency_trials              1              1              1
+total                         27              1              1
+
+Select jobs to execute...
+
+[Fri Mar 28 15:49:38 2025]
+rule fig5D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds
+    jobid: 24
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 24.
+1 of 27 steps (4%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig6D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds
+    jobid: 31
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 31.
+2 of 27 steps (7%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig5B:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds
+    jobid: 22
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 22.
+3 of 27 steps (11%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig4A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds
+    jobid: 12
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:30:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=30m, n_cores=10
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 12.
+4 of 27 steps (15%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig6B:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds
+    jobid: 29
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 29.
+5 of 27 steps (19%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig5C:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds
+    jobid: 23
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 23.
+6 of 27 steps (22%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig6C:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds
+    jobid: 30
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 30.
+7 of 27 steps (26%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig3D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/D.rds
+    jobid: 9
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=7
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 9.
+8 of 27 steps (30%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig6A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds
+    jobid: 28
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:39 2025]
+Finished job 28.
+9 of 27 steps (33%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:39 2025]
+rule fig4D:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/traj_for_phase_plane.csv
+    jobid: 13
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 13.
+10 of 27 steps (37%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule fig5A:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds
+    jobid: 21
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 21.
+11 of 27 steps (41%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule optim_clin_trial_params:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    jobid: 17
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=4:00:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=4d, n_cores=20-25
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 17.
+12 of 27 steps (44%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule stringency_trials:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_stringency_trials.csv
+    jobid: 33
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=3:00:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=3d, n_cores=20
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 33.
+13 of 27 steps (48%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule sim_clin_trial:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    jobid: 16
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:02:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=2h, n_cores=10
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 16.
+14 of 27 steps (52%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule fig4G:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/G.rds
+    jobid: 18
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 18.
+15 of 27 steps (56%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule fig4E:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/traj_for_phase_plane.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds
+    jobid: 14
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:45:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=45m, n_cores=10
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 14.
+16 of 27 steps (59%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule fig6EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_stringency_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    jobid: 32
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 32.
+17 of 27 steps (63%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule gen_fig6:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    jobid: 27
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:40 2025]
+Finished job 27.
+18 of 27 steps (67%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:40 2025]
+rule dominance_trials:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_clin_trial_params.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    jobid: 26
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=3:00:00:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=3d, n_cores=20
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 26.
+19 of 27 steps (70%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule fig4H:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/H.rds
+    jobid: 19
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 19.
+20 of 27 steps (74%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule fig4F:
+    input: dat/collett_trial.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/sim_clinical_trial.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds
+    jobid: 15
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 15.
+21 of 27 steps (78%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule gen_fig4:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/F.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/G.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/H.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf
+    jobid: 11
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 11.
+22 of 27 steps (81%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule gen_fig3:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/D.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf
+    jobid: 5
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 5.
+23 of 27 steps (85%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule fig5EF:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/optim_params.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/params/logistic_fitness_function.csv, runs/ddt_logistic_mu_2e-05_2025-03-24/dat_gen/sims/full_dominance_trials.csv
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    jobid: 25
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 25.
+24 of 27 steps (89%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule gen_fig5:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/A.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/B.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/C.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/D.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/E.rds, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/F.rds
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf
+    jobid: 20
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 20.
+25 of 27 steps (93%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+rule collate_all:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig2/fig2.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig3/fig3.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig4/fig4.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig5/fig5.pdf, runs/ddt_logistic_mu_2e-05_2025-03-24/res/fig6/fig6.pdf
+    output: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    jobid: 1
+    resources: tmpdir=/tmp/12722379.1.feder-login.q, log_loc=./log_scr/, mfree=3G, cluster_time=0:00:10:00, mem_mb=3G, disk_free=4G, disk_mb=4G, runtime=10m, n_cores=1
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 1.
+26 of 27 steps (96%) done
+Select jobs to execute...
+
+[Fri Mar 28 15:49:41 2025]
+localrule all:
+    input: runs/ddt_logistic_mu_2e-05_2025-03-24/res/all_figs.pdf
+    jobid: 0
+    resources: tmpdir=/tmp/12722379.1.feder-login.q
+
+[Fri Mar 28 15:49:41 2025]
+Finished job 0.
+27 of 27 steps (100%) done
+Complete log: /net/feder/vol1/home/alexrob/projects/dominant_drug_targets/pipeline/.snakemake/log/2025-03-28T154938.427000.snakemake.log

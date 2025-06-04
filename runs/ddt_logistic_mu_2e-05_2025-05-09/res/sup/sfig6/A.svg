@@ -83,12 +83,12 @@
 <text x='83.19' y='112.44' style='font-size: 6.00px; font-family: "Arial";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>10</text>
 <text x='89.86' y='109.47' style='font-size: 4.20px; font-family: "Arial";' textLength='2.33px' lengthAdjust='spacingAndGlyphs'>2</text>
 <text x='65.13' y='120.81' text-anchor='middle' style='font-size: 6.00px; font-family: "Arial";' textLength='25.65px' lengthAdjust='spacingAndGlyphs'>Total MOI</text>
-<text transform='translate(9.85,61.15) rotate(-90)' style='font-size: 6.00px; font-family: "Arial";' textLength='3.87px' lengthAdjust='spacingAndGlyphs'>Δ</text>
-<text transform='translate(9.85,57.29) rotate(-90)' style='font-size: 6.00px; font-family: "Arial";' textLength='1.66px' lengthAdjust='spacingAndGlyphs'> </text>
-<text transform='translate(9.85,55.62) rotate(-90)' style='font-size: 6.00px; font-style: italic; font-family: "Arial";' textLength='1.66px' lengthAdjust='spacingAndGlyphs'>f</text>
-<text transform='translate(10.94,53.30) rotate(-90)' style='font-size: 4.20px; font-family: "Arial";' textLength='3.02px' lengthAdjust='spacingAndGlyphs'>R</text>
-<text transform='translate(10.94,50.28) rotate(-90)' style='font-size: 4.20px; font-family: "Arial";' textLength='2.33px' lengthAdjust='spacingAndGlyphs'>e</text>
-<text transform='translate(10.94,47.95) rotate(-90)' style='font-size: 4.20px; font-family: "Arial";' textLength='2.10px' lengthAdjust='spacingAndGlyphs'>s</text>
+<text transform='translate(9.85,60.82) rotate(-90)' style='font-size: 6.00px; font-family: "Arial";' textLength='3.87px' lengthAdjust='spacingAndGlyphs'>Δ</text>
+<text transform='translate(9.85,56.96) rotate(-90)' style='font-size: 6.00px; font-family: "Arial";' textLength='1.66px' lengthAdjust='spacingAndGlyphs'> </text>
+<text transform='translate(9.85,55.30) rotate(-90)' style='font-size: 6.00px; font-family: "Arial";' textLength='1.66px' lengthAdjust='spacingAndGlyphs'>f</text>
+<text transform='translate(10.94,53.63) rotate(-90)' style='font-size: 4.20px; font-family: "Arial";' textLength='3.02px' lengthAdjust='spacingAndGlyphs'>R</text>
+<text transform='translate(10.94,50.61) rotate(-90)' style='font-size: 4.20px; font-family: "Arial";' textLength='2.33px' lengthAdjust='spacingAndGlyphs'>e</text>
+<text transform='translate(10.94,48.28) rotate(-90)' style='font-size: 4.20px; font-family: "Arial";' textLength='2.10px' lengthAdjust='spacingAndGlyphs'>s</text>
 <rect x='72.48' y='4.12' width='29.03' height='35.37' style='stroke-width: 0.00;' />
 <rect x='72.48' y='4.12' width='29.03' height='35.37' style='stroke-width: 0.43; fill: #FFFFFF;' />
 <text x='74.47' y='10.05' style='font-size: 6.00px; font-family: "Arial";' textLength='26.04px' lengthAdjust='spacingAndGlyphs'>×-Weaker</text>

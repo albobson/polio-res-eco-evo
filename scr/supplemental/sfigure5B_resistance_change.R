@@ -170,7 +170,7 @@ plot5b <- ggplot() +
                      labels = sapply(c(-2:3),function(i){parse(text = sprintf("10^%d",i))}),
                      limits = c(10^(-2.1), 10^(2.6))) +
   xlab("Total MOI") + 
-  ylab(expression(Delta * " " * italic(f)[Res])) +# paste0("\U0394 Freq. Resistance")) +
+  ylab(expression(Delta * " " * f[Res])) +# paste0("\U0394 Freq. Resistance")) +
   # ylim(0, round(max(low_freq_clean$delta_p), 1)) +
   scale_color_manual(labels = c("Full Dom.", "Pocapavir"),
                      values = c("darkgrey", "black")) +

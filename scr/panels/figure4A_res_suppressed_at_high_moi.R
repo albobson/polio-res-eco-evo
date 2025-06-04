@@ -116,7 +116,7 @@ plot4a <- ggplot(low_freq_clean, aes(x = init_moi_tot, y = delta_p)) +
   # scale_color_manual(values = c("#64A61C", "#FFA61C"),
   #                    name = "Total MOI") +
   xlab("Total MOI") + 
-  ylab(expression(Delta * " " * italic(f)[Res])) +# paste0("\U0394 Freq. Resistance")) +
+  ylab(expression(Delta * " " * f[Res])) +# paste0("\U0394 Freq. Resistance")) +
   theme(
     ## Text size
     text = element_text(size= axis_text_size), 

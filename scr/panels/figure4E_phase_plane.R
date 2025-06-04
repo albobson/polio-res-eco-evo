@@ -136,7 +136,7 @@ plot4e <- ggplot(sims_clean, aes(x = init_moi_tot,
   # labs(color = "Total MOI") +
   # scale_colour_manual(values = c("#FFA61C", "#64A61C", rep("#000", 5))) +
   xlab("Total MOI") + 
-  ylab(expression(italic(f)[Res])) + # paste0("\U0394 Freq. Resistance")) +
+  ylab(expression(f[Res])) + # paste0("\U0394 Freq. Resistance")) +
   theme(    
     ## Text size
     text = element_text(size= axis_text_size), 

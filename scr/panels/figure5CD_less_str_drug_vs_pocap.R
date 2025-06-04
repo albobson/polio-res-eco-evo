@@ -297,7 +297,7 @@ plot6d <- ggplot(sims_id, aes(x = fold_strin,
                 # position=position_dodge(.05)
   ) +
   
-  scale_color_continuous(name = expression(italic(f)[Res]),
+  scale_color_continuous(name = expression(f[Res]),
                          low = color_in[2],
                          high = color_in[1],
                          limits = c(0, 1),

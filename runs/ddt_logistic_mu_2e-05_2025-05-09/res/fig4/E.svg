@@ -326,9 +326,9 @@
 <text x='139.05' y='112.44' style='font-size: 6.00px; font-family: "Arial";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>10</text>
 <text x='145.72' y='109.47' style='font-size: 4.20px; font-family: "Arial";' textLength='2.33px' lengthAdjust='spacingAndGlyphs'>2</text>
 <text x='99.44' y='120.81' text-anchor='middle' style='font-size: 6.00px; font-family: "Arial";' textLength='25.65px' lengthAdjust='spacingAndGlyphs'>Total MOI</text>
-<text transform='translate(11.59,60.35) rotate(-90)' style='font-size: 8.40px; font-style: italic; font-family: "Arial";' textLength='2.33px' lengthAdjust='spacingAndGlyphs'>f</text>
-<text transform='translate(13.11,57.10) rotate(-90)' style='font-size: 5.88px; font-family: "Arial";' textLength='4.24px' lengthAdjust='spacingAndGlyphs'>R</text>
-<text transform='translate(13.11,52.86) rotate(-90)' style='font-size: 5.88px; font-family: "Arial";' textLength='3.27px' lengthAdjust='spacingAndGlyphs'>e</text>
-<text transform='translate(13.11,49.59) rotate(-90)' style='font-size: 5.88px; font-family: "Arial";' textLength='2.94px' lengthAdjust='spacingAndGlyphs'>s</text>
+<text transform='translate(11.59,59.89) rotate(-90)' style='font-size: 8.40px; font-family: "Arial";' textLength='2.33px' lengthAdjust='spacingAndGlyphs'>f</text>
+<text transform='translate(13.11,57.56) rotate(-90)' style='font-size: 5.88px; font-family: "Arial";' textLength='4.24px' lengthAdjust='spacingAndGlyphs'>R</text>
+<text transform='translate(13.11,53.32) rotate(-90)' style='font-size: 5.88px; font-family: "Arial";' textLength='3.27px' lengthAdjust='spacingAndGlyphs'>e</text>
+<text transform='translate(13.11,50.05) rotate(-90)' style='font-size: 5.88px; font-family: "Arial";' textLength='2.94px' lengthAdjust='spacingAndGlyphs'>s</text>
 </g>
 </svg>

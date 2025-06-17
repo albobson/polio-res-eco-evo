@@ -1,4 +1,4 @@
-This directory contains all of the scripts and data to run the analysis for _Social interactions shape antiviral resistance outcomes in poliovirus via eco-evolutionary feedback_, by Robertson, Kerr and Feder (2025).
+This directory contains all of the scripts and data to run the analysis for _Intracellular interactions shape antiviral resistance outcomes in poliovirus via eco-evolutionary feedback_, by Robertson, Kerr and Feder (2025).
 
 Directory structure:
 - cart: Illustrator/Affinity files for each figure that requires letters and/or cartoons. 

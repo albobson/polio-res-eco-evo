@@ -7,7 +7,7 @@ suppressWarnings(suppressMessages({
   library(ggplot2)
 }))
 
-setwd("~/PhD/dominant_drug_targets/book/250512_Ne/")
+setwd("~/PhD/dominant_drug_targets/polio-res-eco-evo_update/extra/N_mu_calculation/")
 
 
 axis_text_size <- 6
@@ -18,8 +18,8 @@ height = 5
 
 
 
-
-
+library(dplyr)
+library(ggplot2)
 
 ## Read in the files
 data <- read.csv(paste0("all_stoch-v2_var.csv"))
@@ -164,7 +164,8 @@ for(i in 0:max(data$time)) {
   
   #### Plotting ####
   nup <- ggplot(result, aes(x = nu, y = proportion_zero)) +
-    geom_line() +
+    geom_point(size = 1) +
+    geom_smooth(span = 0.35) +
     theme_light() +
     xlab(expression("Host cell population size" ~ "\u00d7" ~ "mutation rate (" * gamma %*% mu * ")")) + ylab("Extinction Probability") +
     scale_x_continuous(trans="log10",breaks=breaks10nu,
@@ -204,6 +205,8 @@ for(i in 0:max(data$time)) {
       # legend.key.width = unit(0, 'cm'),
       # legend.key.size = unit(0.3, "cm")
     ) 
+  
+  # nup
   
   ggsave(plot = nup,
          filename = paste0("results/result_t", i,"_n-u.pdf"),

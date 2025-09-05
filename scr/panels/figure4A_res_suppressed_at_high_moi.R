@@ -45,8 +45,19 @@ source("scr/polv_DDT_functions.R")  ## Main functions
 geom_text_conv = 0.3528
 
 #### Run simulations                                                        ####
+# range <- 0.0001
+# mois <- 10^seq(from = -2, to = 2.5, length.out = 50)
+
+c_pop <- 2.9 * 10 ^ 6
+## Initial frequency of resistance
 range <- 0.0001
-mois <- 10^seq(from = -2, to = 2.5, length.out = 50)
+# mois <- 10^seq(from = -3, to = 2.3, length.out = 50)
+r_init_range <- unique(floor(10^seq(from = log10(1), to = log10(optim_params$optim_v_prog*c_pop*range), length.out = 50)))
+
+v_range <- r_init_range/range
+
+mois <- v_range/c_pop
+
 
 cl <- makeCluster(detectCores()-2)
 registerDoParallel(cl)

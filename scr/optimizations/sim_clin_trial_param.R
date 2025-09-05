@@ -12,6 +12,17 @@
 #### Set Up                                                                 ####
 ## Set up where to save
 ## Date of the run
+# init_date <- "2025-08-22"
+# init_fit_func <- "logistic"
+# init_mu <- 2e-5
+# c_pop <- 38305.2045245901
+# imm_sd <- 0.516072531230672
+# imm_m <- -1.49100765661781
+# t_imm <- 9.46525893007497
+# n_cores <- 40
+# fit_func_in <- rep(1, 61)
+
+
 init_date <- as.character(snakemake@params[["date"]])
 
 ## Fitness function
@@ -19,6 +30,14 @@ init_fit_func <- as.character(snakemake@params[["fit_func"]])
 
 ## Mutation rate
 init_mu <- as.numeric(snakemake@params[["mu"]])
+
+## Cell population
+init_c_pop <- as.numeric(snakemake@params[["c_pop"]])
+
+## Virus population
+# init_v_pop <- as.numeric(snakemake@params[["v_pop"]])
+
+print(paste0("init_c_pop: ", init_c_pop))
 
 ## Create the filepath where things will be saved
 filepath <- paste0("runs/ddt_", init_fit_func, "_mu_", init_mu, "_", init_date, "/")
@@ -31,7 +50,7 @@ optim_params <- read.csv(paste0(filepath, "dat_gen/params/optim_params.csv"))
 coldat <- read.csv("dat/collett_trial.csv")
 
 ## Source functions to run simulations
-source("scr/polv_DDT_functions.R")  ## Main functions 
+source("scr/polv_DDT_functions.R")  ## Main functions
 
 ## Number of cores to run the model
 n_cores <- detectCores()-1
@@ -56,58 +75,88 @@ sims_to_run <- sum(coldat_obs$n_per_d) * 10
 #### Function to optimize                                                   ####
 func_optim_imm_param <- function(data, par, fit_func_in, ...) {
   ## Assigning parameters
-  c_pop <- exp(par[1])      ## Params[1] is the log(c_pop)
+  c_pop <- exp(par[1]) #exp(par[1])      ## Params[1] is the log(c_pop)
   t_imm <- par[2]           ## Params[2] is the first day of the immune response
   imm_m <- par[3]           ## Params[3] is the mean of the immune function
   imm_sd <- par[4]          ## Params[4] is the sd of the immune function
-  
+
   ## Reading in the other variables
   args <- list(...)
   ncores <- args$ncores
   sims_to_run <- args$sims_to_run
   optim_params <- args$optim_params
-  
+  # init_c_pop <- args$c_pop
+  init_v_pop <- args$v_pop
+
   ## changing the name of data to a different object
   coldat_obs <- data
-  
+
   ## Generate a dataframe to store data and a df to bind with
   df_test <- NULL
   df_it <- NULL
-  
+
+  print(paste0("New run using t_imm: ", t_imm,", imm_m: ", imm_m,", imm_sd: ", imm_sd, ", c_pop: ", c_pop))
+
+  ## Adding a check to keep the sd from going negative
+  if(imm_sd < 0) {
+
+    tot_logL <- 1000
+
+    ## Saving the parameters and optimization variable to visualize later
+    ## First updating counter
+    cc <<- cc+1
+
+    ## Now recoding the values
+    vals[[cc]] <<- c(cc, par, tot_logL)
+
+    print(paste0("iteration: ", cc, ", Val: ", tot_logL))
+    ## I need to flip the sign here, since optim tries to minimize values
+    return(tot_logL)
+
+    ## If it's not negative, perform the function as normal
+  } else {
+
   ## Creating a cluster to make this run faster
   cl <- makeCluster(n_cores)
   registerDoParallel(cl)
-  
+
+  # moi_wt_in <- as.numeric(init_v_pop)/as.numeric(c_pop)
+
+
   ## Placebo group
-  trial_raw <- foreach(k = 1:sims_to_run, 
-                         .combine = "rbind", 
+  trial_raw <- foreach(k = 1:sims_to_run,
+                         .combine = "rbind",
                          .export = 'stoch_polv',
-                     .packages = c('dplyr')) %dopar% {
-                       stoch_polv(n = 300, 
-                                  moi_wt_start = 1, 
-                                  moi_mut_start = 0, 
-                                  t_pocap = 0, 
+                     .packages = c('dplyr')#,
+                     # .verbose = TRUE
+                     ) %dopar% {
+                       stoch_polv(n = 300,
+                                  moi_wt_start = 1,
+                                  moi_mut_start = 0,
+                                  t_pocap = 0,
                                   id = k,
                                   imm_delay = t_imm,
                                   c_pop = c_pop,
                                   imm_m = imm_m,
-                                  imm_sd = imm_sd, 
+                                  imm_sd = imm_sd,
                                   fit_func_in = fit_func_in,
                                   v_prog = optim_params$optim_v_prog,
                                   p2pfu = optim_params$optim_p2pfu,
                                   seed_in = k*2
-                       ) %>% 
-                         mutate(time = time/3) ## Changing from replications to days
+                       ) %>%
+                         mutate(time = round(time/3, 0)) ## Changing from replications to days and rounding to the nearest day
+
                      }
   
   stopCluster(cl)
   stopImplicitCluster()
   
+  print(paste0("Sims run"))
   
   ## Clean the data to find the dates of each clearance
-  simsclean <- trial_raw %>% group_by(id) %>% 
+  simsclean <- trial_raw %>% group_by(id) %>%
     filter(type == "resistant") %>%
-    select(id, time) %>% 
+    select(id, time) %>%
     filter(time == max(time)) %>%
     mutate(time = ceiling(time))
   
@@ -130,11 +179,11 @@ func_optim_imm_param <- function(data, par, fit_func_in, ...) {
     
     ## Now recoding the values
     vals[[cc]] <<- c(cc, par, tot_logL)
-  
-  print(paste0("iteration: ", cc, ", Val: ", tot_logL))
-  ## I need to flip the sign here, since optim tries to minimize values
-  return(tot_logL)
-  
+    
+    print(paste0("iteration: ", cc, ", Val: ", tot_logL))
+    ## I need to flip the sign here, since optim tries to minimize values
+    return(tot_logL)
+    
   } else { ## If there are not any times == 100, record as usual
     ## Now calculate the PDF of this distribution
     trial_pdf <- simsclean %>%
@@ -176,21 +225,21 @@ func_optim_imm_param <- function(data, par, fit_func_in, ...) {
     
     ## Now recoding the values
     vals[[cc]] <<- c(cc, par, tot_logL)
-    
     print(paste0("iteration: ", cc, ", Val: ", -tot_logL))
     ## I need to flip the sign here, since optim tries to minimize values
     return(-tot_logL)
+  }
   }
 }
 
 #### Run optimization                                                       ####
 ## The initial values to start
 params_in <- c(
-  log(8*10^3),      ## Params[1] is the log(c_pop)
+  log(init_c_pop),#log(8*10^3),      ## Params[1] is the log(c_pop)
   9,                ## Params[2] is the first time step of the immune response
   -1.6,             ## Params[3] is the mean of the immune function
   0.5               ## Params[4] is the sd of the immune function
-) 
+)
 
 cc <- 0         ## This will count the cycles of optim
 vals <- list()  ## And this will store the values of optim
@@ -202,14 +251,15 @@ placebo_fit_func <- rep(1, 61)
 
 ## Running the function
 system.time(
-  optim_clin_trial_params <- optim(data = coldat_obs, 
-                                  par = params_in, 
-                                  fn = func_optim_imm_param, 
-                                  fit_func_in = placebo_fit_func,
-                                  ncores = n_cores,
-                                  sims_to_run = sims_to_run,
-                                  optim_params = optim_params,
-                                  method = "Nelder-Mead"
+  optim_clin_trial_params <- optim(data = coldat_obs,
+                                   par = params_in,
+                                   fn = func_optim_imm_param,
+                                   fit_func_in = placebo_fit_func,
+                                   ncores = n_cores,
+                                   sims_to_run = sims_to_run,
+                                   optim_params = optim_params,
+                                   # v_pop = init_v_pop,
+                                   method = "Nelder-Mead"
   )
 )
 
@@ -223,7 +273,7 @@ saveRDS(optim_clin_trial_params, file = paste0(filepath, "dat_gen/params/optim_c
 saveRDS(vals, file = paste0(filepath, "dat_gen/params/vals_optim_clin_trial_vals.rds"))
 
 ## Saving these parameters in a CSV forlater use
-c_pop <- exp(optim_clin_trial_params$par[1])      ## Params[1] is the log(c_pop)
+c_pop <- exp(optim_clin_trial_params$par[1]) #exp(optim_clin_trial_params$par[1])      ## Params[1] is the log(c_pop)
 t_imm <- optim_clin_trial_params$par[2]           ## Params[2] is the first day of the immune response
 imm_m <- optim_clin_trial_params$par[3]           ## Params[3] is the mean of the immune function
 imm_sd <- optim_clin_trial_params$par[4]          ## Params[4] is the sd of the immune function
@@ -234,6 +284,7 @@ optim_df <- data.frame(fit_type = "Placebo",        ## Type of fitness function 
                        optim_imm_m = optim_clin_trial_params$par[3], ## imm_m parameter value
                        optim_imm_sd = optim_clin_trial_params$par[4],  ## imm_sd parameter value
                        minimum_lLik = -optim_clin_trial_params$value)   ## Best fit difference
+
 
 
 write.csv(optim_df, file = paste0(filepath, "dat_gen/params/optim_clin_trial_params.csv"), row.names = F)

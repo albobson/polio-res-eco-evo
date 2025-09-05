@@ -50,7 +50,7 @@ from datetime import datetime
 
 ## At the moment, this will need to be manually set, as I was having trouble
 ## when scripts took more than one day to complete.
-init_date = "2025-05-09" 
+init_date = "2025-09-02" 
 
 #### Simulation parameters                                                  ####
 ## Fitness function to use
@@ -96,11 +96,14 @@ sfig3_dim = [11, 11]
 ## sfig 4 width and height
 sfig4_dim = [9, 7]
 
-## fig 5 width and height
+## sfig 5 width and height
 sfig5_dim = [11, 9]
 
-## fig 7 width and height
+## sfig 6 width and height
 sfig6_dim = [11, 4.5]
+
+## sfig 7 (really 6) width and height
+sfig7_dim = [7, 5]
 
 ## The name for the folder where this run will be stored:
 ## For spatial simulations
@@ -119,6 +122,15 @@ init_indiv = [100]
 ## The percent of individuals in each trial to be administered pocap at 24 hpi.
   ## Here, all are receiving drug at 24 hpi
 init_perc_24 = [1]
+
+## Clinical cell population
+clinical_c_pop = [30000]
+
+## Clinical initial infecting viruses
+## Removed functionality for now, so set to 0 to return an error in scripts I
+## may have missed.
+clinical_v_pop = [0] 
+
 
 
 #### Define Rules for Snakemake                                             ####
@@ -192,7 +204,9 @@ rule optim_clin_trial_params:
     params:
         date = init_date,
         fit_func = init_fit_func,
-        mu = init_mu
+        mu = init_mu,
+        c_pop = clinical_c_pop,
+        v_pop = clinical_v_pop
     resources:
         log_loc=str('./log_scr/'),
         mfree=str('3G'),
@@ -221,7 +235,9 @@ rule sim_clin_trial:
     params:
         date = init_date,
         fit_func = init_fit_func,
-        mu = init_mu
+        mu = init_mu,
+        c_pop = clinical_c_pop,
+        v_pop = clinical_v_pop
     resources:
         log_loc=str('./log_scr/'),
         mfree=str('3G'),
@@ -249,7 +265,9 @@ rule stringency_trials:
         mu = init_mu,
         n_trials = init_n_trials, ## This changes how many trials are run
         n_indiv = init_indiv,  ## Number of individuals per trial
-        perc_24 = init_perc_24
+        perc_24 = init_perc_24,
+        c_pop = clinical_c_pop,
+        v_pop = clinical_v_pop
     resources:
         log_loc=str('./log_scr/'),
         mfree=str('3G'),
@@ -273,7 +291,9 @@ rule all_stringency_trials:
     params:
         date = init_date,
         fit_func = init_fit_func,
-        mu = init_mu
+        mu = init_mu,
+        c_pop = clinical_c_pop,
+        v_pop = clinical_v_pop
     resources:
         log_loc=str('./log_scr/'),
         mfree=str('3G'),
@@ -300,7 +320,9 @@ rule dominance_trials:
         mu = init_mu,
         n_trials = init_n_trials, ## This changes how many trials are run
         n_indiv = init_indiv,  ## Number of individuals per trial
-        perc_24 = init_perc_24
+        perc_24 = init_perc_24,
+        c_pop = clinical_c_pop,
+        v_pop = clinical_v_pop
     resources:
         log_loc=str('./log_scr/'),
         mfree=str('3G'),
@@ -312,6 +334,33 @@ rule dominance_trials:
         n_cores=str('20')
     script:
         'scr/sims/drug_dominance_clin_runs.R'
+
+## Rule ne_est -- Run Ne estimation
+# rule ne_est:
+#     input:
+#         out_file_name + "dat_gen/params/optim_params.csv",
+#         out_file_name + "dat_gen/params/logistic_fitness_function.csv",
+#         out_file_name + "dat_gen/params/optim_clin_trial_params.csv" ## parameters for sims
+#     output:
+#         out_file_name + "dat_gen/sims/ne_sims.csv"
+    # params:
+    #     date = init_date,
+    #     fit_func = init_fit_func,
+    #     mu = init_mu,
+    #     point_start = 0.01,
+    #     point_end = 1000,
+    #     n_points = 100
+    # resources:
+    #     log_loc=str('./log_scr/'),
+    #     mfree=str('3G'),
+    #     cluster_time=str('3:00:00:00'),
+    #     mem_mb=str('3G'),
+    #     disk_free=str('4G'),
+    #     disk_mb=str('4G'),
+    #     runtime=str('3d'),
+    #     n_cores=str('20')
+    # script:
+    #     'scr/sims/ne_est_scr.R'
 
 ################################################################################
 ##################### Rules to generate plots for the data #####################
@@ -564,7 +613,9 @@ rule fig4F:
         rs_colors = rs_colors,
         axis_text_size = axis_text_size,
         lege_text_size = lege_text_size,
-        fig4_dim = fig4_dim
+        fig4_dim = fig4_dim,
+        c_pop = clinical_c_pop,
+        v_pop = clinical_v_pop
     resources:
         log_loc=str('./log_scr/'),
         mfree=str('3G'),
@@ -843,6 +894,8 @@ rule collate_all:
 ## Rule sfig1 -- Generate sup. fig 1 - MOI controls VPC
 rule sfig1:
     input:
+        out_file_name + "dat_gen/params/optim_params.csv",
+        out_file_name + "dat_gen/params/logistic_fitness_function.csv"
     output:
         out_file_name + "res/sup/sfig1/sfig1.pdf"
     params:
@@ -868,6 +921,8 @@ rule sfig1:
 ## Rule sfig2 -- Generate sup. fig 2- MOI controls VPC
 rule sfig2:
     input:
+        out_file_name + "dat_gen/params/optim_params.csv",
+        out_file_name + "dat_gen/params/logistic_fitness_function.csv"
     output:
         out_file_name + "res/sup/sfig2/sfig2.pdf"
     params:
@@ -893,6 +948,8 @@ rule sfig2:
 ## Rule sfig3 -- Generate sup. fig 3 - MOI controls VPC
 rule sfig3:
     input:
+        out_file_name + "dat_gen/params/optim_params.csv",
+        out_file_name + "dat_gen/params/logistic_fitness_function.csv"
     output:
         out_file_name + "res/sup/sfig3/sfig3.pdf"
     params:
@@ -1175,7 +1232,7 @@ rule gen_sfig6:
     input:
         out_file_name + "res/sup/sfig6/A.rds",
         out_file_name + "res/sup/sfig6/B.rds",
-        out_file_name + "res/sup/sfig6/C.rds",
+        out_file_name + "res/sup/sfig6/C.rds"
     output:
         out_file_name + "res/sup/sfig6/sfig6.pdf"
     params:
@@ -1197,6 +1254,33 @@ rule gen_sfig6:
         n_cores=str('1')
     script:
         'scr/supplemental/gen_sfig_6.R'
+        
+        
+## Create sFigure 7 plot                                                    ####
+# rule gen_sfig7:
+#     input:
+#         out_file_name + "dat_gen/sims/ne_sims.csv"
+#     output:
+#         out_file_name + "res/sup/sfig7/sfig7.pdf"
+#     params:
+#         date = init_date,
+#         fit_func = init_fit_func,
+#         mu = init_mu,
+#         rs_colors = rs_colors,
+#         axis_text_size = axis_text_size,
+#         lege_text_size = lege_text_size,
+#         sfig7_dim = sfig7_dim
+#     resources:
+#         log_loc=str('./log_scr/'),
+#         mfree=str('3G'),
+#         cluster_time=str('0:00:10:00'),
+#         mem_mb=str('3G'),
+#         disk_free=str('4G'),
+#         disk_mb=str('4G'),
+#         runtime=str('10m'),
+#         n_cores=str('1')
+#     script:
+#         'scr/supplemental/gen_sfig_7.R'
 
 
 #### Pull all figures into one document                                     ####
@@ -1207,7 +1291,8 @@ rule collate_all_sup:
         out_file_name + "res/sup/sfig3/sfig3.pdf",
         out_file_name + "res/sup/sfig4/sfig4.pdf",
         out_file_name + "res/sup/sfig5/sfig5.pdf",
-        out_file_name + "res/sup/sfig6/sfig6.pdf"
+        out_file_name + "res/sup/sfig6/sfig6.pdf"#,
+        # out_file_name + "res/sup/sfig7/sfig7.pdf"
     output:
         out_file_name + "res/all_sfigs.pdf"
     params:
@@ -1225,3 +1310,27 @@ rule collate_all_sup:
         n_cores=str('1')
     script:
         'scr/supplemental/collate_sup_plots.R'
+
+
+#### Run c_pop by v_tot script                                     ####
+# rule extra_analysis:
+#     input:
+#         out_file_name + "dat_gen/params/optim_params.csv",
+#         out_file_name + "dat_gen/params/logistic_fitness_function.csv"
+#     output:
+#         "c_pop_trial_data.csv"
+#     params:
+#         date = init_date,
+#         fit_func = init_fit_func,
+#         mu = init_mu
+#     resources:
+#         log_loc=str('./log_scr/'),
+#         mfree=str('3G'),
+#         cluster_time=str('0:00:10:00'),
+#         mem_mb=str('3G'),
+#         disk_free=str('3G'),
+#         disk_mb=str('3G'),
+#         runtime=str('2d'),
+#         n_cores=str('45')
+#     script:
+#         '250810_range_of_cpop/250810_cpop.R'

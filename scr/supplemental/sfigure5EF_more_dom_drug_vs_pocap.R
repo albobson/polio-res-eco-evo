@@ -174,7 +174,7 @@ plot5e <- ggplot(sims_id, aes(x = dom_val,
                          limits = c(0, 1),
   ) +
   theme_light() +
-  xlab("Threshold for Res. Pheno.") + ylab("Clearance Date (DPI)") +
+  xlab("Threshold for res. pheno.") + ylab("Clearance date (DPI)") +
   theme(
     ## Text size
     text = element_text(size= axis_text_size), 
@@ -278,7 +278,7 @@ plot5f <- ggplot(sims_id, aes(x = dom_val,
                          limits = c(0, 1),
   ) +
   theme_light() +
-  xlab("Threshold for Res. Pheno.") + ylab("Sum Total Viral Load") +
+  xlab("Threshold for res. pheno.") + ylab("Sum total viral load") +
   scale_y_log10(breaks=10^(round(min(log10(sims_id$tot_v))):round(max(log10(sims_id$tot_v)))),
                 # limits = 10^c(round(min(log10(sims_id$tot_v))), round(max(log10(sims_id$tot_v)))),
                 labels = sapply(round(min(log10(sims_id$tot_v))):round(max(log10(sims_id$tot_v))),function(j){parse(text = sprintf("10^%d",j))}),

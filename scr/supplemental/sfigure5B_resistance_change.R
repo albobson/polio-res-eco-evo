@@ -43,7 +43,7 @@ source("scr/polv_DDT_functions.R")  ## Main functions
 
 ## Create colors for the funcs
 custom_colors <- c("Pocapavir" = "black",
-                   "Full Dom." = "darkgrey") 
+                   "Full dom." = "darkgrey") 
 
 ## geom_text() is in terms of mm, where element_text() is in terms of pt. I want
 ## my geom_text and axis text to be the same. Here, I am defining a conversion
@@ -55,14 +55,21 @@ high_dom <- data.frame(subunits = 0:60,
                        prob_surv = fit_func_logistic(k = 100, 
                                                      min_val = min(fit_func$prob_surv),
                                                      subunits = 60, mid = 59.5),
-                       fit_type = "Full Dom."
+                       fit_type = "Full dom."
 ) 
 
 # library(doParallel)
 
 #### Run simulations                                                        ####
+c_pop <- 2.9 * 10 ^ 6
+## Initial frequency of resistance
 range <- 0.0001
-mois <- 10^seq(from = -2, to = 2.3, length.out = 50)
+# mois <- 10^seq(from = -3, to = 2.3, length.out = 50)
+r_init_range <- unique(floor(10^seq(from = log10(1), to = log10(optim_params$optim_v_prog*c_pop*range), length.out = 50)))
+
+v_range <- r_init_range/range
+
+mois <- v_range/c_pop
 
 cl <- makeCluster(detectCores()-2)
 registerDoParallel(cl)
@@ -162,9 +169,9 @@ plot5b <- ggplot() +
             # color = "darkgrey",
             linetype = "longdash") +
   scale_y_continuous(trans="log10", 
-                     breaks=10^(-4:0),
-                     labels = sapply(c(-4:0),function(i){parse(text = sprintf("10^%d",i))}),
-                     limits = c(10^(-4.01), 10^(0))
+                     breaks=10^(-5:0),
+                     labels = sapply(c(-5:0),function(i){parse(text = sprintf("10^%d",i))}),
+                     limits = c(10^(-5.01), 10^(0))
   ) +
   scale_x_continuous(trans="log10", breaks=10^(-2:3),
                      labels = sapply(c(-2:3),function(i){parse(text = sprintf("10^%d",i))}),
@@ -172,7 +179,7 @@ plot5b <- ggplot() +
   xlab("Total MOI") + 
   ylab(expression(Delta * " " * f[Res])) +# paste0("\U0394 Freq. Resistance")) +
   # ylim(0, round(max(low_freq_clean$delta_p), 1)) +
-  scale_color_manual(labels = c("Full Dom.", "Pocapavir"),
+  scale_color_manual(labels = c("Full dom.", "Pocapavir"),
                      values = c("darkgrey", "black")) +
   scale_linetype(guide = "none") +
   theme(

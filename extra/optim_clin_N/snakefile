@@ -1,0 +1,78 @@
+## In this snakefile, I will test different starting cell populations to
+## determine the end N population, given the initial starting cell population in
+## the optimization
+
+
+#### Environment                                                            ####
+## Set Conda environment globally
+conda: "env/polv_env.yml"
+
+
+#### Define input parameters                                                ####
+## Get the current date
+from datetime import datetime
+## Store run date
+# init_date = datetime.today().strftime('%Y-%m-%d')
+
+## At the moment, this will need to be manually set, as I was having trouble
+## when scripts took more than one day to complete.
+init_date = "2025-08-22" 
+
+#### Simulation parameters                                                  ####
+## Mutation rate to use
+init_mu = [2e-05]
+
+## The name for the folder where this run will be stored:
+## For spatial simulations
+out_file_name = "init_c_pop_imm_train_results/"
+
+## Create this new directory
+from pathlib import Path
+Path(out_file_name).mkdir(parents=True, exist_ok=True)
+
+## Clinical cell starting population
+clinical_c_pop = [29628/2, 29628*2]
+
+## Clinical initial infecting viruses
+# clinical_v_pop = [10]
+
+
+## For well-mixed simulations
+out_mix_pattern = "init_c_pop_imm_train_results_params_c_pop_{c_pop}.csv"
+
+
+## Generate the list of specific files needed
+out_mix_files = expand(out_mix_pattern,
+                       c_pop = clinical_c_pop)
+
+#### Define Rules for Snakemake                                             ####
+## Rule All: Tells Snakemake what we want in the end of the run
+rule all:
+    input:
+        ## This is the collated file which I want in the end 
+        out_mix_files
+
+################################################################################
+######################## Rules to run the optimizations ########################
+################################################################################
+
+## Rule optim_clin_trial_params -- Find the optimum params for the clin. trial
+rule optim_clin_trial_params:
+    input:
+    output:
+        out_mix_pattern
+    params:
+        mu = init_mu,
+        date = init_date
+        #v_pop = clinical_v_pop
+    resources:
+        log_loc=str('./log_scr/'),
+        mfree=str('3G'),
+        cluster_time=str('4:00:00:00'),
+        mem_mb=str('3G'),
+        disk_free=str('4G'),
+        disk_mb=str('4G'),
+        runtime=str('4d'),
+        n_cores=str('20')
+    script:
+        'sim_clin_trial_param_estimates.R'

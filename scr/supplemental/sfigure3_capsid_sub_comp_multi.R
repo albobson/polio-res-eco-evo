@@ -72,7 +72,7 @@ moi100 <- ggplot(moi100_df0001, aes(x = subs, y = dens_b4_pocap, fill = type)) +
   geom_bar(stat = "identity", position = "dodge") +
   facet_grid(rows = vars(time), labeller = labeller(time = function(x) paste0("t = ", x))) +
   theme_light() +
-  xlab("Res. Capsid Subunits") +
+  xlab("Resistant capsid subunits") +
   ylab("Density") +
   scale_fill_manual(labels = c("Sus.", "Res."),
                      values = rev(color_in),

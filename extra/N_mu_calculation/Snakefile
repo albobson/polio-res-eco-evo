@@ -58,6 +58,17 @@ rule run_var_sims:
         generations = gens
     output:
         out_file = out_sim_pattern
+    resources:
+        log_loc=str('./log_scr/'),
+        # mfree=str('3G'),
+        cluster_time=str('0:00:10:00'),
+        # mem_mb=str('3G'),
+        # disk_free=str('2G'),
+        # runtime=str('1h')
+        mem_mb=str('8000'),
+        mfree=str('8G'),
+        disk_free=str('10G'),
+        runtime=str('2h')
     script:
         'scr/stoch_var_moi_4_snakemake.R'
 
@@ -67,6 +78,17 @@ rule collate_sims:
         out_sim_files
     output:
         out_tog_pattern
+    resources:
+        log_loc=str('./log_scr/'),
+        # mfree=str('3G'),
+        cluster_time=str('0:00:10:00'),
+        # mem_mb=str('3G'),
+        # disk_free=str('2G'),
+        # runtime=str('1h')
+        mem_mb=str('10000'),
+        mfree=str('10G'),
+        disk_free=str('10G'),
+        runtime=str('2h')
     script:
         'scr/collate_all_sim_data.R'
 

@@ -87,7 +87,7 @@ plot4d <- ggplot(curr_run, aes(x = time, y = moi_type, color = type)) +
                      name = "Genotype") +
   # theme_light() + 
   xlab("Replications") + 
-  ylab("Viral Density (Genomes/cell)") + 
+  ylab("Viral density (genomes/cell)") + 
   scale_y_log10(breaks=10^(evens(-6:10)),
                 labels = sapply(evens(-6:10), function(i){parse(text = sprintf("10^%d",i))})) +
   scale_x_continuous(breaks = c(0:max(curr_run$time))) +

@@ -92,7 +92,7 @@ sup_plot4 <- ggplot(simsclean, aes(x = time, y = moi_type, color = type, group =
                     name = "Genotype") +
   theme_light() + 
   xlab("Days post infection (DPI)") + 
-  ylab("Viral Density (Genomes/cell)") + 
+  ylab("Viral density (genomes/cell)") + 
   xlim(c(0, round(max(simsclean$time), 0))) +
   scale_y_log10(breaks=10^(evens(-6:10)),
                 labels = sapply(evens(-6:10), function(i){parse(text = sprintf("10^%d",i))})) +

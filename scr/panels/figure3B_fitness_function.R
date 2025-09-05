@@ -59,8 +59,8 @@ func_plot <- ggplot(fit_df, aes(x = subunits, y = prob_surv)) +
             linewidth = 0.7) +
   geom_point(color = "black",
              size = 0.8) +
-  xlab("Resistant Subunits") +
-  ylab("Probability of Survival") +
+  xlab("Resistant subunits") +
+  ylab("Probability of survival") +
   scale_y_continuous(trans="log10",
                      limits = c(0.0001,1),
                      breaks=10^(-4:0),

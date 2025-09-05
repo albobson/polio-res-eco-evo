@@ -66,9 +66,9 @@ mah_a24v <- tan_mix %>%
 #### Run optimization                                                       ####
 ## The initial values to start
 params_in <- c(
-  log(1000),    ## Burst size -- Logging this to explore log range
-  log(100),     ## p2pfu -- Logging this to explore log range
-  500           ## max_vpc -- Maximum viruses per cell 
+  log(1000) #,    ## Burst size -- Logging this to explore log range
+  #log(100),     ## p2pfu -- Logging this to explore log range
+  #500           ## max_vpc -- Maximum viruses per cell 
 ) 
 
 cc <- 0         ## This will count the cycles of optim
@@ -104,8 +104,8 @@ stopImplicitCluster()
 ## Saving these parameters in a new file for later use
 optim_df <- data.frame(fit_type = fit_func_df$fit_type[1],      ## Type of fitness function used
                        optim_v_prog = exp(optim_params$par[1]), ## v_prog parameter value
-                       optim_p2pfu = exp(optim_params$par[2]),  ## p2pfu parameter value
-                       optim_max_vpc = optim_params$par[3],     ## max vpc value
+                       optim_p2pfu = 1,  ## p2pfu parameter value (setting directly)
+                       optim_max_vpc = 1000,     ## max vpc value (setting directly)
                        minimum_fit_diff = optim_params$value)   ## Best fit difference
 
 write.csv(optim_df, file = paste0(filepath, "dat_gen/params/optim_params.csv"), row.names = F)

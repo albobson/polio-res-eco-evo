@@ -67,7 +67,7 @@ tan_trunc <- tan_mix %>%
 tan_trunc_p <- ggplot(tan_trunc, aes(x = moi_wt, y = pfu, fill = "black")) +
   geom_bar(stat="identity", position = "dodge", fill = "black") +
   theme_classic() + 
-  xlab("WT MOI") + ylab("Res. Viral Yield (PFU/mL)") + 
+  xlab("WT MOI") + ylab("Res. viral yield (PFU/mL)") + 
   scale_y_continuous(trans="log10",
                      breaks=10^(0:10),
                      # expand = c(0.01, 0),

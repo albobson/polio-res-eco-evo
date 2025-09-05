@@ -80,7 +80,7 @@ f_late_id <- as.vector(unlist(late_id[1,]))
 
 late_sim <- early %>%
   filter(id == f_late_id) %>%
-  mutate(clear = "Late Clearer")
+  mutate(clear = "Late clearer")
 
 
 ## An individual early clearer who cleared susceptible
@@ -107,12 +107,12 @@ f_early_id <- as.vector(unlist(early_id[1,]))
 
 early_sim <- early %>%
   filter(id == f_early_id) %>%
-  mutate(clear = "Early Clearer")
+  mutate(clear = "Early clearer")
 
 ## Combine the two dataframes to have early/late clearer in one df
 full_df <- rbind(early_sim, late_sim)
 
-full_df$clear <- factor(full_df$clear, c("Late Clearer", "Early Clearer"))
+full_df$clear <- factor(full_df$clear, c("Late clearer", "Early clearer"))
 
 #### Plotting                                                               ####
 full_p <- ggplot(full_df, aes(x = time, y = moi_type, color = type)) +
@@ -123,7 +123,7 @@ full_p <- ggplot(full_df, aes(x = time, y = moi_type, color = type)) +
                      name = "Genotype") +
   theme_light() + 
   xlab("Days post infection") + 
-  ylab("Viral Density (Genomes/cell)") + 
+  ylab("Viral density (genomes/cell)") + 
   scale_x_continuous() +
   scale_y_log10(breaks=10^(evens(-6:10)),
                 labels = sapply(evens(-6:10), function(i){parse(text = sprintf("10^%d",i))}),

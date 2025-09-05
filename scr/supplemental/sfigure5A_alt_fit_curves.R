@@ -53,14 +53,14 @@ high_dom <- data.frame(subunits = 0:60,
                        prob_surv = fit_func_logistic(k = 100, 
                                                      min_val = min(fit_func$prob_surv),
                                                      subunits = 60, mid = 59.5),
-                       fit_type = "Full Dom."
+                       fit_type = "Full dom."
 ) 
 
 all_funcs <- rbind(fit_func, high_dom)
 
 ## Create colors for them
 custom_colors <- c("Pocapavir" = "black", # black
-                   "Full Dom." = "darkgrey") # Saddle Brown
+                   "Full dom." = "darkgrey") # Saddle Brown
 
 #### Visualize                                                              ####
 func_plot <- ggplot() +
@@ -82,8 +82,8 @@ func_plot <- ggplot() +
             linetype = "longdash",
             linewidth = 0.7
   ) +
-  xlab("Res. Subunit Composition") +
-  ylab("Probability of Survival") +
+  xlab("Res. subunit composition") +
+  ylab("Probability of survival") +
   scale_y_continuous(trans="log10",
                      limits = c(0.0003,1),
                      breaks=10^(-4:0),

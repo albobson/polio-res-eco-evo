@@ -125,7 +125,7 @@ sub_dens_b4_plot <- ggplot(df_clean, aes(x = subs, y = dens_val, fill = type)) +
   ) +
   # ylab(expression("Initial " * italic(f)[Res])) +
   ylab("Density") +
-  xlab("Res. Capsid Subunits") +
+  xlab("Resistant capsid subunits") +
   theme(
     ## Text size
     text = element_text(size= axis_text_size), 

@@ -182,7 +182,7 @@ splot6b <- ggplot(sims_id, aes(x = fold_strin,
   #               # position=position_dodge(.05)
   # ) +
   theme_light() +
-  xlab("Fold Weaker") + ylab("Clearance Date (DPI)") +
+  xlab("Fold weaker") + ylab("Clearance date (DPI)") +
   scale_x_log10(
     # breaks=10^(-5:0),
     # limits = c((min(sims_id$wt_rep_abil)-min(sims_id$wt_rep_abil)*0.1), 1.5),
@@ -287,7 +287,7 @@ splot6c <- ggplot(sims_id, aes(x = fold_strin,
                          limits = c(0, 1),
   ) +
   theme_light() +
-  xlab("Fold Weaker") + ylab("Sum Total Viral Load") +
+  xlab("Fold weaker") + ylab("Sum total viral load") +
   scale_x_log10(
     # breaks=10^(-5:0),
     # limits = c((min(sims_id$wt_rep_abil)-min(sims_id$wt_rep_abil)*0.1), 1.5),

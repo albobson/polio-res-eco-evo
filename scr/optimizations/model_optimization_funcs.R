@@ -1,8 +1,9 @@
 #### Function to optimize (Note, I'm going to use foreach to parallelize the sims) ####
+## Removed PPFU, so I am just iterating over burst size. 
 func_to_optim <- function(data, par, fit_func_in) {
   burst <- exp(par[1])                   ## Params[1] is the log(burst size)
-  ppfu <- exp(par[2])                    ## Params[2] is the log(p2pfu)
-  max_v_p_c <- par[3]                    ## I've removed this for now (it doesn't do anything inside of the function)
+  #ppfu <- exp(par[2])                    ## Params[2] is the log(p2pfu)
+  #max_v_p_c <- par[3]                    ## I've removed this for now (it doesn't do anything inside of the function)
   
   ## Generate a dataframe to store data and a df to bind with
   df_test <- NULL
@@ -20,8 +21,8 @@ func_to_optim <- function(data, par, fit_func_in) {
                          moi_wt_start = sus_moi,
                          fit_func_in = fit_func_in,
                          v_prog = burst,
-                         p2pfu = ppfu,
-                         max_vpc = max_v_p_c
+                         p2pfu = 1,
+                         max_vpc = 1000
                        )
                      }
   

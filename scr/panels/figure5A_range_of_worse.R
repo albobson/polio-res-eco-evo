@@ -103,14 +103,14 @@ func_plot <- ggplot() +
             linewidth = 1
   ) +
   scale_linetype(guide = "none") +
-  xlab("Resistant Subunits") +
-  ylab("Probability of Survival") +
+  xlab("Resistant subunits") +
+  ylab("Probability of survival") +
   scale_y_continuous(trans="log10",
                      # limits = c(0.0001,1),
                      breaks=10^(-4:0),
                      labels = c(sapply(-4:-1,function(i){parse(text = sprintf("10^%d",i))}), "1 ")) +
   theme_light() +
-  scale_color_manual(name = "Fold Weaker",
+  scale_color_manual(name = "Fold weaker",
                      values = gray_range) +
   theme(
     ## Text size

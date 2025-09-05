@@ -183,9 +183,9 @@ plot6c <- ggplot(sims_id, aes(x = fold_strin,
   ) +
   geom_point(data = sims_stats_all,
              mapping = aes(y = clear_mean),
-             color = "red",
-             size = 1,
-             shape = 17
+             color = "black",
+             size = 1.5,
+             shape = 3
   ) +
   geom_errorbar(data = sim_sds,
                 aes(ymin=clear_mean_minus_sd, ymax=clear_mean_plus_sd),
@@ -194,7 +194,7 @@ plot6c <- ggplot(sims_id, aes(x = fold_strin,
   ) +
   theme_light() +
   scale_y_continuous(limits = c(0, 25)) +
-  xlab("Fold Weaker") + ylab("Clearance Time (DPI)") +
+  xlab("Fold weaker") + ylab("Clearance time (DPI)") +
   scale_x_log10(
     # breaks=10^(-5:0),
     # limits = c((min(sims_id$wt_rep_abil)-min(sims_id$wt_rep_abil)*0.1), 1.5),
@@ -287,9 +287,9 @@ plot6d <- ggplot(sims_id, aes(x = fold_strin,
   #             size = 1.5) +
   geom_point(data = sims_stats_all,
              mapping = aes(y = vl_mean),
-             color = "red",
-             size = 1,
-             shape = 17
+             color = "black",
+             size = 1.5,
+             shape = 3
   ) +
   geom_errorbar(data = sim_sds,
                 aes(ymin=vl_mean_minus_sd, ymax=vl_mean_plus_sd),
@@ -303,7 +303,7 @@ plot6d <- ggplot(sims_id, aes(x = fold_strin,
                          limits = c(0, 1),
   ) +
   theme_light() +
-  xlab("Fold Weaker") + ylab("Sum Total Viral Load") +
+  xlab("Fold weaker") + ylab("Sum total viral load") +
   scale_x_log10(
     # breaks=10^(-5:0),
     # limits = c((min(sims_id$wt_rep_abil)-min(sims_id$wt_rep_abil)*0.1), 1.5),

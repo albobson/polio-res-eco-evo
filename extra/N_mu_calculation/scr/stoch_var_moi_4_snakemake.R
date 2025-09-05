@@ -14,7 +14,7 @@ gens <- as.numeric(snakemake@params[["generations"]])
 
 
 ## Create the filepath where things will be saved
-filepath <- paste0("../../pipeline/runs/ddt_logistic_mu_2e-5_2025-05-09/")
+# filepath <- paste0("../../runs/ddt_logistic_mu_2e-5_2025-05-09/")
 
 ## geom_text() is in terms of mm, where element_text() is in terms of pt. I want
 ## my geom_text and axis text to be the same. Here, I am defining a conversion
@@ -23,17 +23,17 @@ geom_text_conv = 0.3528
 
 
 ## Read in fitness function and parameters
-fit_func <- read.csv(paste0("../../pipeline/runs/ddt_logistic_mu_2e-05_2025-05-09/dat_gen/params/logistic_fitness_function.csv"))
-optim_params <- read.csv(paste0("../../pipeline/runs/ddt_logistic_mu_2e-05_2025-05-09/dat_gen/params/optim_params.csv"))
+fit_func <- read.csv(paste0("../../runs/ddt_logistic_mu_2e-05_2025-08-22/dat_gen/params/logistic_fitness_function.csv"))
+optim_params <- read.csv(paste0("../../runs/ddt_logistic_mu_2e-05_2025-08-22/dat_gen/params/optim_params.csv"))
 
 
 ## Source functions to run simulations
-source("../../pipeline/scr/polv_DDT_functions.R")  ## Main functions 
-source("../../pipeline/scr/optimizations/model_optimization_funcs.R")  ## Optimization functions
+source("../../scr/polv_DDT_functions.R")  ## Main functions 
+# source("../scr/optimizations/model_optimization_funcs.R")  ## Optimization functions
 
 ## From the n_u, find the initial parameters to use
 moi_res <- 0
-moi_sus <- 10 ## MOI at 10 so that nearly every cell is infected
+moi_sus <- 1 ## MOI at 10 so that nearly every cell is infected
 mut_rate <- 2e-5
 cells <- n_u/mut_rate
 

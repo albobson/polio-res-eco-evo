@@ -19,4 +19,4 @@ source /net/feder/vol1/home/alexrob/mambaforge/envs/snakemake/bin/activate
 export TMPDIR="/jobs_folder"
 
 ## Run your Snakemake pipeline, specifying the temporary directory
-snakemake --cluster "qsub -cwd -o ./log_scr/ -e ./log_scr/ -l mfree=3G -l disk_free=1G -l h_rt=0:15:0" --jobs 20
+snakemake --cluster "qsub -cwd -o {resources.log_loc} -e {resources.log_loc} -l mfree={resources.mfree} -l disk_free={resources.disk_free} -l h_rt={resources.cluster_time}" --jobs 20

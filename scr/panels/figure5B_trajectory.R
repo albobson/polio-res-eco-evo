@@ -85,11 +85,11 @@ less_str_run <- determ_polv(n = 6,
                             v_prog = optim_params$optim_v_prog,
                             p2pfu = optim_params$optim_p2pfu
 ) %>%
-  mutate(fit_type = "100x Weaker")
+  mutate(fit_type = "100x weaker")
 
 tot_df <- rbind(pocap_run, less_str_run)
 
-tot_df$fit_type <- factor(tot_df$fit_type, levels = c("Pocapavir", "100x Weaker"))
+tot_df$fit_type <- factor(tot_df$fit_type, levels = c("Pocapavir", "100x weaker"))
 
 #### Plotting trajectory                                                    ####
 plot6b <- ggplot(tot_df, aes(x = time, y = moi_type, color = type, linetype = fit_type)) +
@@ -101,7 +101,7 @@ plot6b <- ggplot(tot_df, aes(x = time, y = moi_type, color = type, linetype = fi
   theme_light() + 
   # scale_linetype(guide = "none") +
   xlab("Passages") + 
-  ylab("Viral Density (Genomes/cell)") + 
+  ylab("Viral density (genomes/cell)") + 
   scale_y_log10(breaks=10^(-6:10),
                 labels = sapply(-6:10,function(i){parse(text = sprintf("10^%d",i))}),
                 limits = c(10^-5, 10^2.4)) +

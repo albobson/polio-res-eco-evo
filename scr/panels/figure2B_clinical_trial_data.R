@@ -100,7 +100,7 @@ tend_plot_only <-
                      expand = c(0,0)
   ) +
   scale_x_discrete(expand = c(0,0)) +
-  labs(x = "Treatment", y = "Measured Clearance Time (DPI)", fill = "Infection") +
+  labs(x = "Treatment", y = "Measured clearance time (DPI)", fill = "Infection") +
   theme_classic() +
   theme(text = element_text(size= axis_text_size), 
         axis.text = element_text(size= axis_text_size),

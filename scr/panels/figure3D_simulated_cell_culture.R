@@ -101,7 +101,7 @@ my_p <- ggplot(my_data_clean, aes(x = moi_wt, y = sum_pfu, fill = sim)) +
   geom_bar(stat="identity", position = "dodge", fill = "black") +
   theme_classic() + 
   labs(fill = "Type") +
-  xlab("WT MOI") + ylab("Res. Viral Yield (PFU/mL)") + 
+  xlab("WT MOI") + ylab("Res. viral yield (PFU/mL)") + 
   scale_y_continuous(trans="log10",
                      breaks=10^(0:10),
                      # expand = c(0.01, 0),

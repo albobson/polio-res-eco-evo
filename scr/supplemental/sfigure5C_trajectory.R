@@ -44,7 +44,7 @@ source("scr/polv_DDT_functions.R")  ## Main functions
 
 ## Create colors for the funcs
 custom_colors <- c("Pocapavir" = "black", # black
-                   "Full Dom." = "darkgrey") # Saddle Brown
+                   "Full dom." = "darkgrey") # Saddle Brown
 
 ## geom_text() is in terms of mm, where element_text() is in terms of pt. I want
 ## my geom_text and axis text to be the same. Here, I am defining a conversion
@@ -56,7 +56,7 @@ high_dom <- data.frame(subunits = 0:60,
                        prob_surv = fit_func_logistic(k = 100, 
                                                      min_val = min(fit_func$prob_surv),
                                                      subunits = 60, mid = 59.5),
-                       fit_type = "Full Dom."
+                       fit_type = "Full dom."
 ) 
 
 
@@ -77,11 +77,11 @@ high_dom_run <- determ_polv(n = 6,
                             v_prog = optim_params$optim_v_prog,
                             p2pfu = optim_params$optim_p2pfu
 ) %>%
-  mutate(fit_type = "Full Dom.")
+  mutate(fit_type = "Full dom.")
 
 tot_df <- rbind(pocap_run, high_dom_run)
 
-tot_df$fit_type <- factor(tot_df$fit_type, levels = c("Pocapavir", "Full Dom."))
+tot_df$fit_type <- factor(tot_df$fit_type, levels = c("Pocapavir", "Full dom."))
 
 #### Plotting trajectory                                                    ####
 plot5c <- ggplot(tot_df, aes(x = time, y = moi_type, color = type, linetype = fit_type)) +
@@ -93,7 +93,7 @@ plot5c <- ggplot(tot_df, aes(x = time, y = moi_type, color = type, linetype = fi
   theme_light() + 
   # scale_linetype(guide = "none") +
   xlab("Passages") + 
-  ylab("Viral Density (Genomes/cell)") + 
+  ylab("Viral density (genomes/cell)") + 
   scale_y_log10(breaks=10^(-6:10),
                 labels = sapply(-6:10,function(i){parse(text = sprintf("10^%d",i))}),
                 limits = c(10^-5, 10^2.4)) +

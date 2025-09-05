@@ -43,7 +43,7 @@ source("scr/polv_DDT_functions.R")  ## Main functions
 
 ## Create colors for the funcs
 custom_colors <- c("Pocapavir" = "black", # black
-                   "Full Dom." = "darkgrey") # Saddle Brown
+                   "Full dom." = "darkgrey") # Saddle Brown
 
 ## geom_text() is in terms of mm, where element_text() is in terms of pt. I want
 ## my geom_text and axis text to be the same. Here, I am defining a conversion
@@ -97,8 +97,8 @@ func_plot <- ggplot() +
             linewidth = 1
   ) +
   scale_linetype(guide = "none") +
-  xlab("Resistant Subunits") +
-  ylab("Probability of Survival") +
+  xlab("Resistant subunits") +
+  ylab("Probability of survival") +
   scale_y_continuous(trans="log10",
                      # limits = c(0.0001,1),
                      breaks=10^(-4:0),

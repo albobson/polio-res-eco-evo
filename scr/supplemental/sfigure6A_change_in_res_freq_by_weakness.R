@@ -86,8 +86,15 @@ for(i in 1:length(scale_range)) {
 }
 
 ############################### Run sims #######################################
+c_pop <- 2.9 * 10 ^ 6
+## Initial frequency of resistance
 range <- 0.0001
-mois <- 10^seq(from = -2, to = 2.5, length.out = 50)
+# mois <- 10^seq(from = -3, to = 2.3, length.out = 50)
+r_init_range <- unique(floor(10^seq(from = log10(1), to = log10(optim_params$optim_v_prog*c_pop*range), length.out = 50)))
+
+v_range <- r_init_range/range
+
+mois <- v_range/c_pop
 
 cl <- makeCluster(init_cores-1)
 registerDoParallel(cl = cl)
@@ -152,11 +159,11 @@ splot <- ggplot(low_freq_clean, aes(x = init_moi_tot, y = delta_p, color = facto
                      labels = sapply(c(-2:3),function(i){parse(text = sprintf("10^%d",i))}),
                      limits = c(10^(-2.1), 10^(2.6))) +
   scale_y_continuous(trans="log10", 
-                     breaks=10^(-4:0),
-                     labels = sapply(c(-4:0),function(i){parse(text = sprintf("10^%d",i))}),
-                     limits = c(10^(-4), 10^(0))
+                     breaks=10^(-5:0),
+                     labels = sapply(c(-5:0),function(i){parse(text = sprintf("10^%d",i))}),
+                     limits = c(10^(-5.1), 10^(0))
   ) +
-  scale_color_manual(name = expression("\u00d7-Weaker"),
+  scale_color_manual(name = expression("\u00d7-weaker"),
                      values = gray_range) +
   # ylim(0, round(max(low_freq_clean$delta_p), 1)) +
   # xlim(0, 102) +

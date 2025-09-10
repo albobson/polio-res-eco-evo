@@ -11,10 +11,10 @@
 #$ -cwd
 ## Send an email when complete
 #$ -m bea
-#$ -M alexrob@uw.edu
+#$ -M <your_email@domain.edu>
 
-# Activate snakemake environment
-conda activate polv_env
+# Activate polv_env environment
+source <your_conda_env_path/envs/polv_env/bin/activate>
 
 # Set a variable for your temporary directory using $TMPDIR
 export TMPDIR="/jobs_folder"

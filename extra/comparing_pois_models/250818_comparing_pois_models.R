@@ -4,9 +4,6 @@
 
 ## Setting up a remote connection for easy scripting
 
-
-#remoter::client(port=54321,addr="localhost",prompt="r-on-cluster",timer=FALSE)
-
 ## Read in original functions
 source("../scr/polv_DDT_functions.R")
 

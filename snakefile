@@ -1,11 +1,4 @@
-## 25-03-24
-## TO DO
-
-    ## Split generate figure 3A script into two pieces? Right now the fitness
-    ## function is generated and the plot is generated
-    
-    ## Same as above for trajectory in fig 5C and fig 6C
-    
+## 25-09-10
 
 #### Intro ####
 
@@ -24,7 +17,7 @@
     ## calculated to be 2x10-5 (see Supplemental Materials and Methods).
     
 ## Based on the input parameters, the model will run optimizations to determine
-## the average burst size per cell and the P:PFU ratio, matching to Tanner et
+## the average burst size per cell, matching to Tanner et
 ## al. (2014) mixed cell culture data. Separately, it will optimize for the
 ## parameters that govern immune clearance, comparing to Collete et al. (2017). 
 
@@ -33,9 +26,7 @@
 
 ## All of the figures and parameter optimization tables will be saved in a
 ## respective sub-folder in the /res/ folder. The sub-folder will be named
-## according to the fitness function used and the mutation rate. A single file
-## titled "model_out.csv" will contain the date that the model was run, the
-## input parameters, and the optimized values.
+## according to the fitness function used and the mutation rate.
 
 #### Environment                                                            ####
 ## Set Conda environment globally
@@ -45,11 +36,8 @@ conda: "env/polv_env.yml"
 #### Define input parameters                                                ####
 ## Get the current date
 from datetime import datetime
-## Store run date
-# init_date = datetime.today().strftime('%Y-%m-%d')
 
-## At the moment, this will need to be manually set, as I was having trouble
-## when scripts took more than one day to complete.
+## Store run date
 init_date = "2025-09-02" 
 
 #### Simulation parameters                                                  ####
@@ -123,7 +111,7 @@ init_indiv = [100]
   ## Here, all are receiving drug at 24 hpi
 init_perc_24 = [1]
 
-## Clinical cell population
+## Clinical cell population start value
 clinical_c_pop = [30000]
 
 ## Clinical initial infecting viruses

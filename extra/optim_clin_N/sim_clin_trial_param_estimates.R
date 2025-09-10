@@ -18,7 +18,7 @@ init_c_pop <- as.numeric(snakemake@wildcards[["c_pop"]])
 # init_v_pop <- as.numeric(snakemake@params[["v_pop"]])
 
 ## Date
-init_date <- "2025-08-22" # as.numeric(snakemake@params[["date"]])
+init_date <- "2025-09-02" # as.numeric(snakemake@params[["date"]])
 
 print(paste0("init_c_pop: ", init_c_pop))
 
